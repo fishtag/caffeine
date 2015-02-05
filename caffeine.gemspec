@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'slim', '~> 3.0.2'
   s.add_dependency 'friendly_id', '~> 5.0'
   s.add_dependency 'closure_tree', '~> 5.2.0'
+  s.add_dependency 'draper', '~> 1.4.0'
 end

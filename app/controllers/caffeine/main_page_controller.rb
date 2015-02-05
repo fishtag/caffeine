@@ -1,9 +1,9 @@
 module Caffeine
   class MainPageController < ApplicationController
-    expose(:page) { Page.main.first.decorate }
+    expose(:page) { Page.main_page.decorate }
 
     def index
-      render template: 'pages/show'
+      render template: 'caffeine/pages/show'
     end
   end
 end

@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Caffeine CMS admin interface
+    = stylesheet_link_tag 'caffeine/admin', media: 'all'
+    = javascript_include_tag 'caffeine/admin'
+    = csrf_meta_tags
+  body
+    = yield
