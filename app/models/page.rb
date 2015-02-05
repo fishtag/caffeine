@@ -15,8 +15,8 @@ class Page < ActiveRecord::Base
 
   enum status: %i(draft published blocked)
 
-  validates :name, presence: true
-
+  validates :title, presence: true
+  validates :main, uniqueness: true
   # triggered unless page is not itself and is not selected as the main page
   before_save :drop_other_main, on: %i(create update destroy), if: ->(o) { o.main? }
 
@@ -33,6 +33,6 @@ class Page < ActiveRecord::Base
   private
 
   def drop_other_main
-    self.class.where('id != ? AND main', self.id).update_all("main = 'false'")
+    self.class.where(main: true).where.not(id: self.id).update_all(main: false)
   end
 end
