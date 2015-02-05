@@ -1,4 +1,4 @@
-class CreatePages < ActiveRecord::Migration
+class CaffeineCreatePages < ActiveRecord::Migration
   create_table 'pages' do |t|
     t.string   'title'
     t.text     'content'
