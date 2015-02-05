@@ -8,6 +8,7 @@ module Caffeine
 
     def copy_caffeine_migrations
       migration_template 'page_migration.rb', 'db/migrate/caffeine_create_pages.rb'
+      migration_template 'album_migration.rb', 'db/migrate/caffeine_create_albums.rb'
     end
   end
 end
