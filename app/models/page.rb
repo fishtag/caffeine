@@ -18,24 +18,21 @@ class Page < ActiveRecord::Base
   validates :name, presence: true
 
   # triggered unless page is not itself and is not selected as the main page
-  before_save on: %i(create update destroy) do
-    Page.main.update_all(main: false) unless main_page?
-  end
+  before_save :drop_other_main, on: %i(create update destroy), if: ->(o) { o.main? }
 
   has_closure_tree order: 'position', name_column: 'slug'
 
-  # we don't need this till we fetch all pages through class method
-  # roots_and_descendants_preordered, which returns all nodes in your tree, pre-ordered.
-  # So, you can uncomment this convenient way and ordering pages by parent
-  # acts_as_list scope: :parent
-
-  scope :main, -> { where(main: true) }
-
   def main_page?
-    self == Page.main_page || !main?
+    self == Page.main_page
   end
 
   def self.main_page
-    main.first
+    where(main: true).first
+  end
+
+  private
+
+  def drop_other_main
+    self.class.where('id != ? AND main', self.id).update_all("main = 'false'")
   end
 end
