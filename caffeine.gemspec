@@ -23,4 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id', '~> 5.0'
   s.add_dependency 'closure_tree', '~> 5.2.0'
   s.add_dependency 'draper', '~> 1.4.0'
+  s.add_dependency 'refile', '> 0.5', '<= 1.0'
+  s.add_dependency 'mini_magick', '~> 4.1'
 end
