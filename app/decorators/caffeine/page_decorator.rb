@@ -33,16 +33,5 @@ module Caffeine
     def parents_path
       object.ancestry_path.tap(&:pop).join('/')
     end
-
-    def admin_list_classes
-      offset = page.depth
-      width = 12 - object.depth
-
-      "col-md-#{width} col-md-offset-#{offset} col-xs-#{width} col-xs-offset-#{offset}"
-    end
-
-    def admin_row_classes
-      page.root? ? 'widget' : 'widget no-margin--t no-border--t'
-    end
   end
 end
