@@ -1,6 +1,6 @@
 class CaffeineCreateAlbums < ActiveRecord::Migration
   def change
-    create_table :albums do |t|
+    create_table :caffeine_albums do |t|
       t.string :title
       t.string :slug
       t.boolean :fix_slug
@@ -9,7 +9,7 @@ class CaffeineCreateAlbums < ActiveRecord::Migration
       t.belongs_to :page, index: true
     end
 
-    add_foreign_key :albums, :pages
-    add_index       :albums, :slug
+    add_foreign_key :caffeine_albums, :pages
+    add_index       :caffeine_albums, :slug
   end
 end
