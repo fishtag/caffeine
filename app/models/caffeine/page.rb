@@ -3,9 +3,9 @@ module Caffeine
     # include Sluggable
 
     has_many :albums
+    has_many :pictures, as: :imageable
     # has_many :user_forms
     # has_many :page_attachments
-    # has_one :page_image
     # has_one :seo_datum, as: :datable, dependent: :destroy
 
     # delegate :meta_title, :meta_keywords, :meta_description, :seo_text, to: :seo_datum
