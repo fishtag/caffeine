@@ -5,7 +5,6 @@ class CaffeineCreatePages < ActiveRecord::Migration
       t.text     'content'
       t.text     'summary'
       t.string   'slug'
-      t.boolean  'fix_slug', default: false
       t.integer  'status', default: 0
       t.integer  'parent_id'
       t.integer  'position'
