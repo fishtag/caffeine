@@ -1,5 +1,5 @@
 module Caffeine
-  class MainPageController < ApplicationController
+  class MainPageController < CaffeineController
     expose(:page) { Page.main_page.decorate }
 
     def index

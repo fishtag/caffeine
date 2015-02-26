@@ -1,5 +1,5 @@
 module Caffeine
-  class PagesController < ApplicationController
+  class PagesController < CaffeineController
     expose(:pages)
     expose(:page, strategy: PageStrategy)
 

@@ -1,6 +1,6 @@
 module Caffeine
   module Admin
-    class ApplicationController < Caffeine::ApplicationController
+    class ApplicationController < CaffeineController
       layout 'layouts/caffeine/admin'
     end
   end
