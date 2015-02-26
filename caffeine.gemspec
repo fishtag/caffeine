@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'decent_exposure', '~> 2.3.2'
   s.add_dependency 'slim', '~> 3.0.2'
   s.add_dependency 'friendly_id', '~> 5.0'
+  s.add_dependency 'babosa', '~> 1.0'
   s.add_dependency 'closure_tree', '~> 5.2.0'
   s.add_dependency 'draper', '~> 1.4.0'
   s.add_dependency 'refile', '> 0.5', '<= 1.0'

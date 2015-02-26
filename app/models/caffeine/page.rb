@@ -1,6 +1,6 @@
 module Caffeine
   class Page < ActiveRecord::Base
-    # include Sluggable
+    include Caffeine::Concerns::Sluggable
 
     has_many :albums
     has_many :pictures, as: :imageable
