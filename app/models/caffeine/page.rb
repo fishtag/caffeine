@@ -1,6 +1,6 @@
 module Caffeine
   class Page < ActiveRecord::Base
-    include Caffeine::Concerns::Sluggable
+    include Concerns::Sluggable
 
     has_many :albums
     has_many :pictures, as: :imageable
@@ -17,7 +17,8 @@ module Caffeine
     enum status: %i(draft published blocked)
 
     validates :title, presence: true
-    validates :main, uniqueness: true
+    validates :main, uniqueness: true, if: ->(page) { page.main? }
+
     # triggered unless page is not itself and is not selected as the main page
     before_save :drop_other_main, on: %i(create update destroy), if: ->(o) { o.main? }
 

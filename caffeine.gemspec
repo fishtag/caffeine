@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'draper', '~> 1.4.0'
   s.add_dependency 'refile', '> 0.5', '<= 1.0'
   s.add_dependency 'mini_magick', '~> 4.1'
+  s.add_dependency 'simple_form', '~> 3.1'
 end
