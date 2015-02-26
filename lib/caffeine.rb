@@ -7,5 +7,4 @@ require 'refile/image_processing'
 
 module Caffeine
   require 'caffeine/engine'
-  require 'caffeine/concerns/sluggable'
 end
