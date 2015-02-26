@@ -1,3 +1,4 @@
+require 'responders'
 require 'decent_exposure'
 require 'slim'
 require 'closure_tree'

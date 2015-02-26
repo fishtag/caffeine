@@ -6,6 +6,8 @@ module Caffeine
 
     namespace :admin do
       root 'dashboard#index'
+
+      resources :pages
     end
 
     get '/*page_path', to: 'pages#show', as: :page, constraints: PageConstraint
