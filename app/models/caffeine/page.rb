@@ -2,7 +2,6 @@ module Caffeine
   class Page < ActiveRecord::Base
     include Concerns::Sluggable
 
-    has_many :albums
     has_many :pictures, as: :imageable
     # has_many :user_forms
     # has_many :page_attachments

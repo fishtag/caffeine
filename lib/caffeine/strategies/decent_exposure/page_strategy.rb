@@ -1,5 +1,5 @@
 module Caffeine
-  class PageStrategy < DecentExposure::Strategy
+  class PageStrategy < ::DecentExposure::Strategy
     delegate :redirect_to, to: :controller
 
     def resource

@@ -6,6 +6,7 @@ require 'draper'
 require 'refile/rails'
 require 'refile/image_processing'
 require 'simple_form'
+require 'acts-as-taggable-on'
 
 module Caffeine
   require 'caffeine/engine'
