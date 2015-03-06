@@ -39,14 +39,9 @@ module Caffeine
       private
 
       def page_params
-        params.require(:page).permit(:main,
-                                     :title,
-                                     :content,
-                                     :summary,
-                                     :slug,
-                                     :fix_slug,
-                                     :parent_id,
-                                     :position)
+        params.require(:page).permit(:main, :title, :slug,
+                                     :content, :summary,
+                                     :parent_id, :position, :tag_list)
       end
     end
   end
