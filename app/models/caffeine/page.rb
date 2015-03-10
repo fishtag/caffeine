@@ -1,6 +1,6 @@
 module Caffeine
-  class Page < ActiveRecord::Base
-    include Concerns::Sluggable
+  class Page < Node
+    store_accessor :data, :main, :status, :content, :summary
 
     has_many :pictures, as: :imageable
     # has_one :seo_datum, as: :datable, dependent: :destroy
@@ -11,26 +11,27 @@ module Caffeine
     enum status: %i(draft published blocked)
 
     validates :title, presence: true
-    validates :main, uniqueness: true, if: ->(page) { page.main? }
 
     # triggered unless page is not itself and is not selected as the main page
-    before_save :drop_other_main, on: %i(create update destroy), if: ->(o) { o.main? }
+    before_save :drop_other_main, on: %i(create update destroy), if: ->(page) { page.main }
 
     acts_as_taggable
-    has_closure_tree order: 'position', name_column: 'slug'
 
     def main_page?
       self == Page.main_page
     end
 
     def self.main_page
-      where(main: true).first
+      where(%[data -> 'main'= 'true']).first
     end
 
     private
 
     def drop_other_main
-      self.class.where(main: true).where.not(id: self.id).update_all(main: false)
+      self.class.where(%[data -> 'main'= 'true']).where.not(id: self.id).map do |page|
+        page.main = false
+        page.save
+      end
     end
   end
 end

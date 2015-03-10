@@ -7,7 +7,7 @@ module Caffeine
     source_root File.expand_path('../templates', __FILE__)
 
     def copy_caffeine_migrations
-      migration_template 'page_migration.rb', 'db/migrate/caffeine_create_pages.rb'
+      migration_template 'node_migration.rb', 'db/migrate/create_caffeine_nodes.rb'
       migration_template 'picture_migration.rb', 'db/migrate/create_caffeine_pictures.rb'
     end
 
