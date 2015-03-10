@@ -5,6 +5,8 @@ class CreateCaffeinePictures < ActiveRecord::Migration
       t.string :image_filename
       t.string :image_content_type
       t.integer :image_size
+      t.string :caption
+      t.text :description
 
       t.references :imageable, polymorphic: true, index: true
 
