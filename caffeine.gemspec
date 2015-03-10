@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ['timur.khafizov@fishtag.ru']
   s.homepage    = 'http://github.com/fishtag/caffeine'
   s.summary     = 'Caffeine is KISS CMS on Rails'
-  s.description = 'Caffeine is KISS CMS on Rails'
+  s.description = 'Caffeine is being under heavy development. It should not be used for production apps yet.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
