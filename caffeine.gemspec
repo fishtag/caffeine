@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Caffeine::VERSION
   s.authors     = ['Timur Khafizov']
   s.email       = ['timur.khafizov@fishtag.ru']
-  s.homepage    = 'TODO'
-  s.summary     = 'TODO: Summary of Caffeine.'
-  s.description = 'TODO: Description of Caffeine.'
+  s.homepage    = 'http://github.com/fishtag/caffeine'
+  s.summary     = 'Caffeine is KISS CMS on Rails'
+  s.description = 'Caffeine is KISS CMS on Rails'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'slim', '~> 3.0.2'
   s.add_dependency 'friendly_id', '~> 5.0'
   s.add_dependency 'babosa', '~> 1.0'
-  s.add_dependency 'closure_tree', '~> 5.2.0'
   s.add_dependency 'draper', '~> 1.4.0'
   s.add_dependency 'refile', '> 0.5', '<= 1.0'
   s.add_dependency 'mini_magick', '~> 4.1'
