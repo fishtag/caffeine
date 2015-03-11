@@ -23,10 +23,6 @@ module Caffeine
       main
     end
 
-    def main_page?
-      persisted? ? main? : false
-    end
-
     private
 
     def drop_other_main
