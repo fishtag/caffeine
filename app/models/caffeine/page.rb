@@ -1,6 +1,6 @@
 module Caffeine
   class Page < Node
-    store_accessor :data, :main, :status, :content, :summary
+    store_accessor :data, :main, :content, :summary
 
     has_many :pictures, as: :imageable
     # has_one :seo_datum, as: :datable, dependent: :destroy
@@ -8,7 +8,7 @@ module Caffeine
     # delegate :meta_title, :meta_keywords, :meta_description, :seo_text, to: :seo_datum
     # accepts_nested_attributes_for :seo_datum, update_only: true
 
-    enum status: %i(draft published blocked)
+    # enum status: %i(draft published blocked)
 
     validates :title, presence: true
 
