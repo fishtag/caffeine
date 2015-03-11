@@ -13,22 +13,24 @@ module Caffeine
     validates :title, presence: true
 
     # triggered unless page is not itself and is not selected as the main page
-    before_save :drop_other_main, on: %i(create update destroy), if: ->(page) { page.main }
+    before_save :drop_other_main, on: %i(create update destroy), if: ->(page) { page.main? }
+
+    scope :main_pages, -> { where(%[data -> 'main'= 'true']) }
 
     acts_as_taggable
 
-    def main_page?
-      self == Page.main_page
+    def main?
+      main
     end
 
-    def self.main_page
-      where(%[data -> 'main'= 'true']).first
+    def main_page?
+      persisted? ? main? : false
     end
 
     private
 
     def drop_other_main
-      self.class.where(%[data -> 'main'= 'true']).where.not(id: self.id).map do |page|
+      self.class.main_pages.where.not(id: self.id).map do |page|
         page.main = false
         page.save
       end
