@@ -28,4 +28,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'mini_magick', '~> 4.1'
   s.add_dependency 'simple_form', '~> 3.1'
   s.add_dependency 'acts-as-taggable-on', '~> 3.5'
+  s.add_dependency 'select2-rails', '~> 3.5'
+  s.add_dependency 'simple-line-icons-rails', '~> 0.0.1'
 end
