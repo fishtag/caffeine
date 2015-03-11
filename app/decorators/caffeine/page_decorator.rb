@@ -18,7 +18,7 @@ module Caffeine
     end
 
     def self_custom_template_exists?
-      File.exist?("app/views/pages/templates/#{slug}/_#{TEMPLATE_FILE_NAME}.html.slim")
+      File.exist?("app/views/caffeine/pages/templates/#{slug}/_#{TEMPLATE_FILE_NAME}.html.slim")
     end
 
     def parent_children_template
@@ -26,7 +26,7 @@ module Caffeine
     end
 
     def parent_children_template_exists?
-      File.exist?("app/views/pages/templates/#{parents_path}/_children_#{TEMPLATE_FILE_NAME}.html.slim")
+      File.exist?("app/views/caffeine/pages/templates/#{parents_path}/_children_#{TEMPLATE_FILE_NAME}.html.slim")
     end
 
     # returns something similar to 'grandparent/parent'
