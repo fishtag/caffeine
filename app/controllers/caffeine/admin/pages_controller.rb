@@ -42,7 +42,7 @@ module Caffeine
         params.require(:page).permit(:main, :title, :slug,
                                      :content, :summary,
                                      :parent_id, :position, :tag_list,
-                                     pictures_attributes: %i(id image _destroy))
+                                     pictures_attributes: %i(id image caption description _destroy))
       end
     end
   end

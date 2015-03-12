@@ -1,4 +1,6 @@
 .nested-fields
   = image_tag attachment_url(f.object, :image, :fit, 150, 150)
   = f.attachment_field :image
+  = f.input :caption
+  = f.input :description
   = link_to_remove_association 'remove picture', f
