@@ -34,4 +34,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-rails', '~> 4.3.0.0'
   s.add_dependency 'bootstrap-rails-engine', '~> 3.1.1'
   s.add_dependency 'nav_lynx', '~> 1.1.1'
+  s.add_dependency 'cocoon', '~> 1.2.6'
 end

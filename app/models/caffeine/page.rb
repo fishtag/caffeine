@@ -3,6 +3,7 @@ module Caffeine
     store_accessor :data, :main, :content, :summary
 
     has_many :pictures, as: :imageable
+    accepts_nested_attributes_for :pictures, allow_destroy: true
     # has_one :seo_datum, as: :datable, dependent: :destroy
 
     # delegate :meta_title, :meta_keywords, :meta_description, :seo_text, to: :seo_datum

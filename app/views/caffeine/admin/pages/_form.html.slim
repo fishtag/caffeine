@@ -4,5 +4,10 @@
   = f.input :summary
   = f.input :content
   = f.input :position
+  = f.association :parent, collection: Caffeine::Page.roots.where.not(id: page.id)
+  #pictures
+    = f.simple_fields_for :pictures do |picture_f|
+      = render 'picture_fields', f: picture_f
+    = link_to_add_association 'Add picture', f, :pictures
   = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
   = f.submit

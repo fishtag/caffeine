@@ -13,6 +13,7 @@ require 'font-awesome-rails'
 require 'jquery-rails'
 require 'bootstrap-rails-engine'
 require 'nav_lynx'
+require 'cocoon'
 
 module Caffeine
   require 'caffeine/engine'

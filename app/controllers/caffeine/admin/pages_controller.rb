@@ -41,7 +41,8 @@ module Caffeine
       def page_params
         params.require(:page).permit(:main, :title, :slug,
                                      :content, :summary,
-                                     :parent_id, :position, :tag_list)
+                                     :parent_id, :position, :tag_list,
+                                     pictures_attributes: %i(id image _destroy))
       end
     end
   end
