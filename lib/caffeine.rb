@@ -11,7 +11,6 @@ require 'simple-line-icons-rails'
 require 'select2-rails'
 require 'font-awesome-rails'
 require 'jquery-rails'
-require 'jquery-rails-cdn'
 require 'bootstrap-rails-engine'
 require 'nav_lynx'
 
