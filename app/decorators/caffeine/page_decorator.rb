@@ -1,7 +1,7 @@
 module Caffeine
   class PageDecorator < Draper::Decorator
     delegate_all
-    decorates_association :children
+    decorates_association :children, with: Caffeine::PageDecorator
 
     TEMPLATE_FILE_NAME = 'template'
     DEFAULT_TEMPLATE = "templates/default/#{TEMPLATE_FILE_NAME}"
