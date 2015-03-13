@@ -1,13 +1,16 @@
 module Caffeine
   class Page < Node
+    PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary)
+
+    class_attribute :permitted_attributes
+    self.permitted_attributes = self::PERMITTED_ATTRIBUTES
+
+    include Caffeine::Concerns::SeoFriendly
+
     store_accessor :data, :main, :content, :summary
 
     has_many :pictures, as: :imageable
     accepts_nested_attributes_for :pictures, allow_destroy: true
-    # has_one :seo_datum, as: :datable, dependent: :destroy
-
-    # delegate :meta_title, :meta_keywords, :meta_description, :seo_text, to: :seo_datum
-    # accepts_nested_attributes_for :seo_datum, update_only: true
 
     # enum status: %i(draft published blocked)
 

@@ -1,3 +1,8 @@
+begin
+  require 'acts_as_seo_friendly'
+rescue LoadError
+  puts %[[Caffeine] Gem 'acts_as_seo_friendly' is missing. Skipping seo datum definition for Page]
+end
 require 'responders'
 require 'decent_exposure'
 require 'slim'
@@ -14,7 +19,7 @@ require 'jquery-rails'
 require 'bootstrap-rails-engine'
 require 'nav_lynx'
 require 'cocoon'
+require 'caffeine/engine'
 
 module Caffeine
-  require 'caffeine/engine'
 end
