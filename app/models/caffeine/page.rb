@@ -3,13 +3,14 @@ module Caffeine
     PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary)
 
     class_attribute :permitted_attributes
-    self.permitted_attributes = self::PERMITTED_ATTRIBUTES
+    self.permitted_attributes = self::PERMITTED_ATTRIBUTES <<
+      { pictures_attributes: Caffeine::Picture::PERMITTED_ATTRIBUTES }
 
     include Caffeine::Concerns::SeoFriendly
 
     store_accessor :data, :main, :content, :summary
 
-    has_many :pictures, as: :imageable
+    has_many :pictures, -> { order(:position) }, as: :imageable
     accepts_nested_attributes_for :pictures, allow_destroy: true
 
     # enum status: %i(draft published blocked)

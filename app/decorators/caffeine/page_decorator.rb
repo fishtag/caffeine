@@ -33,5 +33,11 @@ module Caffeine
     def parents_path
       object.ancestry_path.tap(&:pop).join('/')
     end
+
+    # Returns page's first picture.
+    # Assuming page has many pictures ordered by position we use the first picture as main
+    def main_picture
+      object.pictures.first
+    end
   end
 end
