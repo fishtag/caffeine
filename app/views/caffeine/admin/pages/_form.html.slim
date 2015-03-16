@@ -4,7 +4,7 @@
   = f.input :summary
   = f.input :content
   = f.input :position
-  = f.association :parent, collection: Caffeine::Page.roots.where.not(id: page.id)
+  = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
   #pictures
     = f.simple_fields_for :pictures do |picture_f|
       = render 'picture_fields', f: picture_f
