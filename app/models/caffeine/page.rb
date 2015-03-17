@@ -1,6 +1,6 @@
 module Caffeine
   class Page < Node
-    PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary)
+    PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary tag_list)
 
     class_attribute :permitted_attributes
     self.permitted_attributes = self::PERMITTED_ATTRIBUTES <<
