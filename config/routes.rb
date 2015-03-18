@@ -10,8 +10,10 @@ module Caffeine
       resources :pages
     end
 
-    resources :pages, only: :show, path: '/', constraints: PageConstraint do
-      resources :tags, only: :show, module: :pages
-    end
+    # Define route for page tags
+    get '*page_id/tags/:id', controller: 'pages/tags', action: :show
+
+    # Define route for pages
+    get '*page_id', to: 'pages#show', constraints: PageConstraint
   end
 end
