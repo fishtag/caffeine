@@ -11,9 +11,9 @@ module Caffeine
     end
 
     # Define route for page tags
-    get '*page_id/tags/:id', controller: 'pages/tags', action: :show
+    get '*page_id/tags/:id', controller: 'pages/tags', action: :show, as: :page_tag
 
     # Define route for pages
-    get '*page_id', to: 'pages#show', constraints: PageConstraint
+    get '*page_id', to: 'pages#show', constraints: PageConstraint, as: :page
   end
 end
