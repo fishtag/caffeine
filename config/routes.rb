@@ -10,6 +10,8 @@ module Caffeine
       resources :pages
     end
 
-    get '/*page_path', to: 'pages#show', as: :page, constraints: PageConstraint
+    resources :pages, only: :show, path: '/', constraints: PageConstraint do
+      resources :tags, only: :show, module: :pages
+    end
   end
 end
