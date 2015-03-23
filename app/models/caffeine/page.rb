@@ -22,7 +22,7 @@ module Caffeine
 
     scope :main_pages, -> { where(%[data -> 'main'= 'true']) }
 
-    acts_as_taggable
+    acts_as_ordered_taggable
 
     def main?
       main
