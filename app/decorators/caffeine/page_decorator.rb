@@ -3,30 +3,27 @@ module Caffeine
     delegate_all
     decorates_association :children, with: Caffeine::PageDecorator
 
-    TEMPLATE_FILE_NAME = 'template'
-    DEFAULT_TEMPLATE = "templates/default/#{TEMPLATE_FILE_NAME}"
+    TEMPLATE_NAME = 'template'
+    CHILDREN_TEMPLATE_NAME = "children_#{TEMPLATE_NAME}"
+    DEFAULT_TEMPLATE = "templates/default/#{TEMPLATE_NAME}"
 
     # First we check if page has an own dedicated template
     # Then we check if page has parents and their children template
     # Finally we take default template
     def page_template
-      self_custom_template || parent_children_template || DEFAULT_TEMPLATE
+      self_template || inherited_template || DEFAULT_TEMPLATE
     end
 
-    def self_custom_template
-      "templates/#{slug}/#{TEMPLATE_FILE_NAME}" if self_custom_template_exists?
+    def self_template
+      "templates/#{slug}/#{TEMPLATE_NAME}" if self_template_exists?
     end
 
-    def self_custom_template_exists?
-      File.exist?("app/views/caffeine/pages/templates/#{slug}/_#{TEMPLATE_FILE_NAME}.html.slim")
+    def self_template_exists?
+      File.exist?("app/views/pages/templates/#{slug}/_#{TEMPLATE_NAME}.html.slim")
     end
 
-    def parent_children_template
-      "templates/#{parents_path}/children_#{TEMPLATE_FILE_NAME}" if parent_children_template_exists?
-    end
-
-    def parent_children_template_exists?
-      File.exist?("app/views/caffeine/pages/templates/#{parents_path}/_children_#{TEMPLATE_FILE_NAME}.html.slim")
+    def inherited_template
+      @inherited_template ||= search_inherited_template
     end
 
     # returns something similar to 'grandparent/parent'
@@ -38,6 +35,29 @@ module Caffeine
     # Assuming page has many pictures ordered by position we use the first picture as main
     def main_picture
       @main_picture ||= object.pictures.first
+    end
+
+    private
+
+    # This method checks if parent has template for its (grand)children
+    def search_inherited_template
+      # Get full ancestry path for current page
+      parent_slugs = object.ancestry_path
+
+      # Iterate over all parents:
+      # 1. Generate template path:
+      #     ['grandparent', 'parent', 'current_page'] => 'grandparent/parent'
+      # 2. Check if template for children exists:
+      #     'app/views/pages/templates/grandparent/parent/_children_template.html.slim'
+      # 3. Return it's name if exist or iterate again without closest parent
+      while (template_dir = parent_slugs.tap(&:pop).join('/')).present?
+        if File.exist?("app/views/caffeine/pages/templates/#{template_dir}/_#{CHILDREN_TEMPLATE_NAME}.html.slim")
+          inherited_template = "templates/#{template_dir}/#{CHILDREN_TEMPLATE_NAME}"
+          break
+        end
+      end
+
+      inherited_template
     end
   end
 end
