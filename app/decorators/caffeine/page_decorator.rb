@@ -3,6 +3,7 @@ module Caffeine
     delegate_all
     decorates_association :children, with: Caffeine::PageDecorator
 
+    TEMPLATE_DIR = 'app/views/caffeine/pages/templates'
     TEMPLATE_NAME = 'template'
     CHILDREN_TEMPLATE_NAME = "children_#{TEMPLATE_NAME}"
     DEFAULT_TEMPLATE = "templates/default/#{TEMPLATE_NAME}"
@@ -19,7 +20,7 @@ module Caffeine
     end
 
     def self_template_exists?
-      File.exist?("app/views/pages/templates/#{slug}/_#{TEMPLATE_NAME}.html.slim")
+      File.exist?("#{TEMPLATE_DIR}/#{slug}/_#{TEMPLATE_NAME}.html.slim")
     end
 
     def inherited_template
@@ -51,7 +52,7 @@ module Caffeine
       #     'app/views/pages/templates/grandparent/parent/_children_template.html.slim'
       # 3. Return it's name if exist or iterate again without closest parent
       while (template_dir = parent_slugs.tap(&:pop).join('/')).present?
-        if File.exist?("app/views/caffeine/pages/templates/#{template_dir}/_#{CHILDREN_TEMPLATE_NAME}.html.slim")
+        if File.exist?("#{TEMPLATE_DIR}/#{template_dir}/_#{CHILDREN_TEMPLATE_NAME}.html.slim")
           inherited_template = "templates/#{template_dir}/#{CHILDREN_TEMPLATE_NAME}"
           break
         end
