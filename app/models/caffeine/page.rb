@@ -1,6 +1,6 @@
 module Caffeine
   class Page < Node
-    PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary tag_list)
+    PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary tag_list serve_by_slug_only)
 
     class_attribute :permitted_attributes
     self.permitted_attributes = self::PERMITTED_ATTRIBUTES <<
@@ -8,7 +8,7 @@ module Caffeine
 
     include Caffeine::Concerns::SeoFriendly
 
-    store_accessor :data, :main, :content, :summary
+    store_accessor :data, :main, :content, :summary, :serve_by_slug_only
 
     has_many :pictures, -> { order(:position) }, as: :imageable
     accepts_nested_attributes_for :pictures, allow_destroy: true
@@ -26,6 +26,10 @@ module Caffeine
 
     def main?
       main
+    end
+
+    def serve_by_slug_only?
+      ActiveRecord::Type::Boolean.new.type_cast_from_database(serve_by_slug_only)
     end
 
     private

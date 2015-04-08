@@ -27,11 +27,6 @@ module Caffeine
       @inherited_template ||= search_inherited_template
     end
 
-    # returns something similar to 'grandparent/parent'
-    def parents_path
-      object.ancestry_path.tap(&:pop).join('/')
-    end
-
     # Returns page's first picture.
     # Assuming page has many pictures ordered by position we use the first picture as main
     def main_picture
