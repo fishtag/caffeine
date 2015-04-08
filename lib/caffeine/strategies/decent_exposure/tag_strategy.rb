@@ -1,3 +1,5 @@
+require 'decent_exposure'
+
 module Caffeine
   class TagStrategy < ::DecentExposure::ActiveRecordStrategy
     def resource

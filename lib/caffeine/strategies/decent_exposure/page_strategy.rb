@@ -1,3 +1,5 @@
+require 'decent_exposure'
+
 module Caffeine
   class PageStrategy < ::DecentExposure::ActiveRecordStrategy
     def resource
