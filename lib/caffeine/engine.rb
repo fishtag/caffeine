@@ -9,8 +9,7 @@ module Caffeine
 
     config.to_prepare do
       ActiveSupport.on_load :action_controller do
-        include Caffeine::Engine.routes.url_helpers
-        include Caffeine::UrlHelper
+        ApplicationController.helper Caffeine::UrlHelper
       end
     end
   end
