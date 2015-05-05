@@ -1,0 +1,17 @@
+ru:
+  devise:
+    sessions:
+      new:
+        legend_html: "Введите данные Вашей учетной записи"
+        title: "Вход в аккаунт"
+      user:
+        signed_in: "Вход успешно выполнен."
+        signed_out: "Выход успешно выполнен."
+      admin:
+        signed_in: "Вход успешно выполнен."
+        signed_out: "Выход успешно выполнен."
+    failure:
+      user:
+        not_found_in_database: 'Неверный логин или пароль.'
+      admin:
+        not_found_in_database: 'Неверный логин или пароль.'

@@ -11,6 +11,8 @@ module Caffeine
       ActiveSupport.on_load :action_controller do
         ApplicationController.helper Caffeine::UrlHelper
       end
+
+      Devise::SessionsController.layout 'caffeine/sessions'
     end
   end
 end

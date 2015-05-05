@@ -2,12 +2,16 @@ require 'caffeine/constraints/page_constraint'
 
 module Caffeine
   Engine.routes.draw do
+    devise_for :admin_users, class_name: 'Caffeine::AdminUser', module: :devise
+
     root 'main_page#index'
 
-    namespace :admin do
-      root 'dashboard#index'
+    authenticate :admin_user do
+      namespace :admin do
+        root 'dashboard#index'
 
-      resources :pages
+        resources :pages
+      end
     end
 
     # Define route for page tags

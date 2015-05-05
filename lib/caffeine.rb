@@ -19,6 +19,7 @@ require 'jquery-rails'
 require 'bootstrap-rails-engine'
 require 'nav_lynx'
 require 'cocoon'
+require 'devise'
 require 'caffeine/engine'
 
 module Caffeine
