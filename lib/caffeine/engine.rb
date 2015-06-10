@@ -9,7 +9,7 @@ module Caffeine
 
     config.to_prepare do
       ActiveSupport.on_load :action_controller do
-        ApplicationController.helper Caffeine::UrlHelper
+        include Caffeine::UrlHelper
       end
 
       Devise::SessionsController.layout 'caffeine/sessions'
