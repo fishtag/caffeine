@@ -1,0 +1,39 @@
+/- breadcrumb :dashboard
+
+.row
+  .col-lg-4.col-md-4.col-sm-6.col-xs-12.margin-bottom-10
+    .dashboard-stat.blue-madison
+      .visual
+        = fa_icon 'briefcase icon-medium'
+      .details
+        .number
+          /= %[#{Product.roots.count} (#{Product.all.count})]
+        .desc
+          = t '.product_count'
+      /= link_to admins_products_path, class: 'more'
+      /  = t '.products'
+      /  = fa_icon('arrow-circle-o-right')
+  .col-lg-4.col-md-4.col-sm-6.col-xs-12
+    .dashboard-stat.red-intense
+      .visual
+        = fa_icon 'shopping-cart'
+      .details
+        .number
+          /= Order.daily.count
+        .desc
+          = t '.orders_today'
+      /= link_to admins_orders_path, class: 'more'
+      /  = t '.orders'
+      /  = fa_icon('arrow-circle-o-right')
+  .col-lg-4.col-md-4.col-sm-6.col-xs-12
+    .dashboard-stat.green-haze
+      .visual
+        = fa_icon 'group icon-medium'
+      .details
+        .number
+          | 2200
+        .desc
+          = t '.views'
+      a.more href="#"
+        = t '.statistics'
+        = fa_icon('arrow-circle-o-right')
