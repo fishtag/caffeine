@@ -1,10 +1,9 @@
 module Caffeine
   class Page < Node
-    PERMITTED_ATTRIBUTES = Caffeine::Node::PERMITTED_ATTRIBUTES + %i(main content summary tag_list serve_by_slug_only)
-
     class_attribute :permitted_attributes
-    self.permitted_attributes = self::PERMITTED_ATTRIBUTES <<
-      { pictures_attributes: Caffeine::Picture::PERMITTED_ATTRIBUTES }
+    self.permitted_attributes = Caffeine::Node.permitted_attributes +
+        %i(main content summary tag_list serve_by_slug_only) <<
+        { pictures_attributes: Caffeine::Picture.permitted_attributes }
 
     include Caffeine::Concerns::SeoFriendly
 
