@@ -27,8 +27,8 @@ module Caffeine
     #
     # And will not redirect '/child1' and '/parent/child2'
     def redirect_page_to_proper_path
-      if request.path != page_path(page)
-        redirect_to page_path(page), status: :moved_permanently
+      if request.path != page_path_for(page)
+        redirect_to page_path_for(page), status: :moved_permanently
       end
     end
   end
