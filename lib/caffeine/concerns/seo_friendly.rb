@@ -9,6 +9,8 @@ module Caffeine
 
           after_initialize :build_seo_datum, if: ->(obj) { obj.seo_datum.blank? }
 
+          accepts_nested_attributes_for :seo_datum
+          
           self.permitted_attributes << { seo_datum_attributes: ::ActsAsSeoFriendly::SeoDatum::PERMITTED_ATTRIBUTES }
         end
       end
