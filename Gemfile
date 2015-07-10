@@ -16,4 +16,5 @@ gemspec
 group :development do
   gem 'pg'
   gem 'sass-rails'
+  gem 'acts_as_seo_friendly'
 end
