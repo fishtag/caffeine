@@ -19,7 +19,7 @@ PATH
       rails (~> 4.2)
       refile (> 0.5, <= 1.0)
       responders (~> 2.0)
-      scrollbar-rails
+      scrollbar-rails (~> 1.0.0)
       select2-rails (~> 3.5)
       simple-line-icons-rails (~> 0.0.1)
       simple_form (~> 3.1)
