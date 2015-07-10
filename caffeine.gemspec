@@ -36,5 +36,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'nav_lynx', '~> 1.1.1'
   s.add_dependency 'cocoon', '~> 1.2.6'
   s.add_dependency 'devise', '~> 3.4'
-  s.add_dependency 'coffee-rails', '~> 4.1.0'
+  s.add_dependency 'coffee-rails', ' ~> 4.1.0'
+  s.add_dependency 'scrollbar-rails'
 end

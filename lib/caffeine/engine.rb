@@ -4,6 +4,16 @@ require 'caffeine/concerns/sluggable'
 require 'caffeine/concerns/seo_friendly'
 
 module Caffeine
+  class << self
+    def config
+      Rails.application.config
+    end
+
+    def root
+      Engine.root
+    end
+  end
+
   class Engine < ::Rails::Engine
     isolate_namespace Caffeine
 
