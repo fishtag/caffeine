@@ -20,6 +20,7 @@ require 'bootstrap-rails-engine'
 require 'nav_lynx'
 require 'cocoon'
 require 'scrollbar-rails'
+require 'normalize-rails'
 require 'devise'
 require 'caffeine/engine'
 
