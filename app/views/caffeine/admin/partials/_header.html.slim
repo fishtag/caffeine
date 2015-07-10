@@ -11,7 +11,7 @@ header.header.clearfix
           = t('.welcome')
           = link_to 'Admin', '#'
         = link_to '/admin/sign_out', class: 'sign-out', title: 'Выйти из системы'
-          img.svg src='assets/images/svg/logout.svg'
+          = image_tag 'caffeine/admin/svg/logout.svg', class: 'svg'
     .header__page-title
       span Центр управления
   .splash-block

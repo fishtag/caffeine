@@ -4,10 +4,10 @@
   background-size: 100% 100%;
 
   &.logo--small {
-    background-image: url("../images/logos/logo-small.png");
+    background-image: url(image_path('caffeine/admin/logos/logo-small.png'));
   }
 
   &.logo--large {
-    background-image: url("../images/logos/logo-large.png");
+    background-image: url(image_path('caffeine/admin/logos/logo-large.png'));
   }
 }

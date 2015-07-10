@@ -1,0 +1,28 @@
+.mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #3c3331;
+}
+
+
+.mCS-dark-3.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background-color: #362f2d;
+}
+
+.sidebar {
+  .mCustomScrollBox {
+    overflow: visible;
+  }
+
+  .mCSB_container {
+    overflow: visible;
+  }
+
+  .mCSB_inside>.mCSB_container {
+    margin-right: 0;
+  }
+
+  .mCSB_outside+.mCS-minimal.mCSB_scrollTools_vertical,
+  .mCSB_scrollTools.mCSB_1_scrollbar.mCS-dark-3.mCSB_scrollTools_vertical {
+    right: initial;
+    left: -1.4rem;
+  }
+}
