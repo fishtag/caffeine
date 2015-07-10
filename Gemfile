@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
 
 # Declare your gem's dependencies in caffeine.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
