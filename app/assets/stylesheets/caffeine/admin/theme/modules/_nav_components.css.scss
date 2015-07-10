@@ -3,49 +3,49 @@
 
     .nav__item--settings {
       .title {
-        background-image: url(../images/components/settings.png);
+        background-image: url(image_path('caffeine/admin/components/settings.png'));
       }
     }
 
     .nav__item--statistics {
       .title {
-        background-image: url(../images/components/statistics.png);
+        background-image: url(image_path('caffeine/admin/components/statistics.png'));
       }
     }
 
     .nav__item--pages {
       .title {
-        background-image: url(../images/components/pages.png);
+        background-image: url(image_path('caffeine/admin/components/pages.png'));
       }
     }
 
     .nav__item--forms {
       .title {
-        background-image: url(../images/components/forms.png);
+        background-image: url(image_path('caffeine/admin/components/forms.png'));
       }
     }
 
     .nav__item--access {
       .title {
-        background-image: url(../images/components/access.png);
+        background-image: url(image_path('caffeine/admin/components/access.png'));
       }
     }
 
     .nav__item--portfolio {
       .title {
-        background-image: url(../images/components/portfolio.png);
+        background-image: url(image_path('caffeine/admin/components/portfolio.png'));
       }
     }
 
     .nav__item--seo {
       .title {
-        background-image: url(../images/components/seo.png);
+        background-image: url(image_path('caffeine/admin/components/seo.png'));
       }
     }
 
     .nav__item--drafts {
       .title {
-        background-image: url(../images/components/drafts.png);
+        background-image: url(image_path('caffeine/admin/components/drafts.png'));
       }
     }
   }
@@ -72,7 +72,7 @@
       }
 
       .nav__item {
-        background-image: url(../images/components/hexagon.png);
+        background-image: url(image_path('caffeine/admin/components/hexagon.png'));
         background-repeat: no-repeat;
         background-position: center 0;
         background-size: 100% auto;

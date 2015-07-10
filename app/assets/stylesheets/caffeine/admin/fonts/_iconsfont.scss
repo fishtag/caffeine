@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "iconsfont";
+  src: font-url('iconsfont.eot');
+  src: font-url('iconsfont.eot?#iefix') format('eot'),
+       font-url('iconsfont.woff') format('woff'),
+       font-url('iconsfont.ttf') format('truetype'),
+       font-url('iconsfont.svg#iconsfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.iconsfont:before {
+  display: inline-block;
+  font-family: "iconsfont";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconsfont-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.iconsfont-2x { font-size: 2em; }
+.iconsfont-3x { font-size: 3em; }
+.iconsfont-4x { font-size: 4em; }
+.iconsfont-5x { font-size: 5em; }
+.iconsfont-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.iconsfont-add-button:before { content: "\E001" }
+.iconsfont-delete-button:before { content: "\E002" }
+.iconsfont-export-document:before { content: "\E003" }
+.iconsfont-floppy:before { content: "\E004" }
+.iconsfont-fullscreen:before { content: "\E005" }
+.iconsfont-import-document:before { content: "\E006" }
+.iconsfont-logout:before { content: "\E007" }
+.iconsfont-minus:before { content: "\E008" }
+.iconsfont-plus:before { content: "\E009" }
+.iconsfont-settings:before { content: "\E00A" }
+.iconsfont-statistics:before { content: "\E00B" }
