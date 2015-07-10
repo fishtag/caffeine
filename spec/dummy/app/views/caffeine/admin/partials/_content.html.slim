@@ -1,9 +1,0 @@
-.page-content-wrapper
-  .page-content
-    / Page Title
-    h3= content_for :h3
-
-    .page-bar
-      /= raw breadcrumbs autoroot: true, display_single_fragment: true, separator: " &rsaquo; ",
-                        style: :ul, class: 'page-breadcrumb', link_current: true
-    = yield
