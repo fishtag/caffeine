@@ -1,0 +1,6 @@
+.page-sidebar-wrapper
+  .page-sidebar.navbar-collapse.collapse
+    ul.page-sidebar-menu.page-sidebar-menu-hover-submenu data-auto-scroll='true' data-keep-expanded='false' data-slide-speed='200'
+      = admin_nav_link_to(admin_root_path, icon: 'home', title: 'Главная')
+      = admin_nav_link_to(admin_pages_path, icon: 'notebook', title: 'Страницы')
+      = admin_nav_link_to('#', icon: 'settings', title: 'Настройки')
