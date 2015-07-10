@@ -1,6 +1,7 @@
 module Caffeine
   class Picture < ActiveRecord::Base
-    PERMITTED_ATTRIBUTES = %i(id image title caption position _destroy)
+    class_attribute :permitted_attributes
+    self.permitted_attributes = %i(id image title caption position description _destroy)
 
     belongs_to :imageable, polymorphic: true
 
