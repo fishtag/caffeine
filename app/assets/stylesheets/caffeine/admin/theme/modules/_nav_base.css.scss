@@ -1,0 +1,80 @@
+.nav__item {
+  .title {
+    font-weight: 300;
+    text-decoration: none;
+    background-repeat: no-repeat;
+  }
+
+  .count-children {
+    color: $colorCountChildrenFont;
+  }
+
+  .action {
+    text-decoration: none;
+
+    &.delete {
+      .action__icon {
+        i {
+          color: $colorHoverMenuPagesLink;
+          background-color: $colorBgMenuPagesItemActionDeleteIcon;
+        }
+      }
+    }
+  }
+
+  .action__icon {
+    i {
+      border-radius: 20rem;
+      background-color: $colorBaseSecondApplication;
+      @include boxShadow(inset calcRem(0px) calcRem(0px) calcRem(3px) calcRem(1px) rgba(0, 0, 0, 0.5))
+    }
+  }
+
+}
+
+.sidebar {
+  .nav__item {
+    .title {
+      color: $colorSidebarText;
+    }
+
+    .action {
+      &:hover {
+        color: $colorHoverMenuPagesLink;
+        background-color: $colorBaseFirstApplication;
+      }
+
+      &.delete {
+        .action__name {
+          color: $colorBgMenuPagesItemActionDeleteTitle;
+        }
+      }
+    }
+
+    .action__icon {
+      background-color: $colorBaseFirstApplication;
+    }
+
+    .more-children {
+      &.action {
+        &:hover {
+          background: none;
+        }
+      }
+
+      .action__icon {
+        background: none;
+      }
+    }
+  }
+
+  .nav__item--fill {
+    &:hover {
+      background-color: $colorBaseFirstApplication;
+
+      .count-children {
+        color: $colorHoverCountChildFont;
+      }
+    }
+  }
+}

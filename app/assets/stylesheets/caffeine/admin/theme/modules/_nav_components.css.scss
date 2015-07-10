@@ -1,0 +1,92 @@
+.nav {
+  &.nav--components {
+
+    .nav__item--settings {
+      .title {
+        background-image: url(../images/components/settings.png);
+      }
+    }
+
+    .nav__item--statistics {
+      .title {
+        background-image: url(../images/components/statistics.png);
+      }
+    }
+
+    .nav__item--pages {
+      .title {
+        background-image: url(../images/components/pages.png);
+      }
+    }
+
+    .nav__item--forms {
+      .title {
+        background-image: url(../images/components/forms.png);
+      }
+    }
+
+    .nav__item--access {
+      .title {
+        background-image: url(../images/components/access.png);
+      }
+    }
+
+    .nav__item--portfolio {
+      .title {
+        background-image: url(../images/components/portfolio.png);
+      }
+    }
+
+    .nav__item--seo {
+      .title {
+        background-image: url(../images/components/seo.png);
+      }
+    }
+
+    .nav__item--drafts {
+      .title {
+        background-image: url(../images/components/drafts.png);
+      }
+    }
+  }
+}
+
+.content__components {
+  font-weight: 300;
+
+  .module__title {
+    color: $colorComponentsModuleTitle;
+    border-bottom-color: transparent;
+  }
+
+  .nav {
+    &.nav--components {
+      .nav__list {
+
+      }
+
+      .nav__item {
+        .title {
+          text-transform: uppercase;
+        }
+      }
+
+      .nav__item {
+        background-image: url(../images/components/hexagon.png);
+        background-repeat: no-repeat;
+        background-position: center 0;
+        background-size: 100% auto;
+
+        .javascript-off & {
+          &:hover {
+            background-position-y: - calcRem(130px);
+          }
+        }
+
+        .title {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

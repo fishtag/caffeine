@@ -1,0 +1,35 @@
+.module {
+
+}
+
+.module__title {
+  border-bottom-style: solid;
+  border-bottom-color: $colorSidebarModuleTitleBorder;
+
+  &:after {
+
+  }
+
+  span {
+
+  }
+
+  a {
+
+  }
+}
+
+.sidebar {
+  .module__title {
+    color: $colorSidebarModuleTitle;
+
+    .icon {
+      color: $colorSidebarModuleTitle;
+      text-decoration: none;
+
+      &:hover {
+        color: darken($colorSidebarModuleTitle, 10%);
+      }
+    }
+  }
+}

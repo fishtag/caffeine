@@ -1,21 +1,17 @@
-.page-header.navbar.navbar-fixed-top
-  .page-header-inner.container
-    .page-logo
-      a href="#"
-        = image_tag image_path("admin/logo-default.png"), class: 'logo-default'
-      .menu-toggler.sidebar-toggler
-    .page-top
-      .top-menu
-        ul.nav.navbar-nav.pull-right
-          li.dropdown.dropdown-user
-            a.dropdown-toggle data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#"
-              i.fa.fa-gear.fa-3x
-              span.username.username-hide-on-mobile
-                = t '.settings'
-              i.fa.fa-angle-down
-            ul.dropdown-menu.dropdown-menu-default
-              li
-                a href="/admin/sign_out"
-                  i.icon-key
-                  = t '.quit'
-.clearfix
+header.header.clearfix
+  .header__fill
+    .header__logo
+      .logo.logo--small
+        a href='./'
+    .header__tray
+      .header__tray__profile
+        span.favicon
+          img src='/assets/images/favicon.png' title='Название сайта'
+        span.more
+          = t('.welcome')
+          = link_to 'Admin', '#'
+        = link_to '/admin/sign_out', class: 'sign-out', title: 'Выйти из системы'
+          img.svg src='assets/images/svg/logout.svg'
+    .header__page-title
+      span Центр управления
+  .splash-block

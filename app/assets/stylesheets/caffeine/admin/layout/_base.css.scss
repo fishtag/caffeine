@@ -1,0 +1,48 @@
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  font-size: $baseSizeFont;
+  line-height: $baseLineHeight;
+}
+
+body {
+  height: 100%;
+  min-width: calcRem(1155px);
+}
+
+#page {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+.clearfix {
+  &:before, &:after {
+    content: '';
+    display: block;
+    clear: both;
+    opacity: 0;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.splash-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}

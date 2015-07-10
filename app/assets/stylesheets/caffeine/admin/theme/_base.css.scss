@@ -1,0 +1,23 @@
+html {
+
+}
+
+body {
+  font-family: $baseFont;
+  background-color: $colorBgBody;
+  color: $colorBaseFirstApplication;
+
+}
+
+a, a:visited {
+  color: $colorLink;
+
+  &:hover {
+    color: $colorHoverLink;
+  }
+}
+
+.splash-block {
+  background-color: #000000;
+  opacity: 0;
+}

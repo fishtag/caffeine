@@ -1,0 +1,171 @@
+button.button,
+input[type="submit"],
+input[type="button"],
+a.button {
+  position: relative;
+  display: inline-block;
+  font-size: calcRem(12px);
+  padding: calcRem(9px) calcRem(14px);
+  line-height: calcRem(22px);
+  white-space: nowrap;
+
+  &.button--block {
+    display: block;
+    width: 100%;
+  }
+
+  span {
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: calcRem(14px);
+    margin-top: - calcRem(9px);
+    font-size: calcRem(18px);
+    line-height: 0;
+
+    + span {
+      margin-left: calcRem(27px);
+    }
+  }
+}
+
+.buttons {
+  @extend .clearfix;
+
+  margin-right: -1rem;
+  overflow: hidden;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  .button {
+    margin-right: 1rem;
+  }
+}
+
+label {
+  display: inline-block;
+  margin-bottom: calcRem(10px);
+  line-height: 1;
+
+  abbr[title] {
+    float: right;
+    margin-left: 0.3rem;
+  }
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'],
+input[type='file'],
+textarea,
+select {
+  display: block;
+  margin-bottom: calcRem(32px);
+  padding: calcRem(12px) calcRem(19px);
+  width: 100%;
+  max-width: 100%;
+  border-width: calcRem(1px);
+  border-style: solid;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: calcRem(5px);
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'] {
+  font-size: calcRem(18px);
+}
+
+textarea {
+  font-size: calcRem(12px);
+}
+
+select {
+  line-height: 1.5;
+}
+
+.field_with_errors {
+  position: relative;
+
+  span.error {
+    position: absolute;
+    top: calcRem(12px);
+    right: 0;
+    display: block;
+    padding: calcRem(6px) calcRem(8px);
+    font-size: calcRem(12px);
+    line-height: 1;
+    border-width: calcRem(1px);
+    border-style: solid;
+  }
+}
+
+.form {
+  &__group {
+    margin-bottom: calcRem(32px);
+
+    &--slug {
+      margin-top: - calcRem(20px);
+
+      > * {
+        line-height: 1;
+        vertical-align: middle;
+      }
+
+      label {
+        margin-bottom: 0;
+        margin-right: 0.3rem;
+
+        &.change-slug {
+          position: relative;
+          margin-left: 2rem;
+          font-size: calcRem(10px);
+          border-bottom-width: calcRem(1px);
+
+          &:before {
+            content: '<';
+            position: absolute;
+            top: 50%;
+            left: -1rem;
+            display: block;
+            margin-top: - calcRem(6px);
+            vertical-align: middle;
+          }
+        }
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      input[type="text"] {
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 0;
+        width: auto;
+        border: none;
+      }
+    }
+  }
+
+  &__fill {
+    position: relative;
+  }
+}

@@ -1,0 +1,246 @@
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button.button,
+input[type="submit"],
+input[type="button"],
+a.button {
+  font-weight: 100;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+
+  @include borderRadius(0.3rem);
+  @include transition(all 0.25s);
+
+  &.button--default {
+    color: $colorDefaultFontButton;
+    background: $colorDefaultBgButton;
+
+    &:hover {
+      color: $colorDefaultFontButton;
+      background: darken($colorDefaultBgButton, 10%);
+    }
+  }
+
+  &.button--primary {
+    color: $colorPrimaryFontButton;
+    background: $colorPrimaryBgButton;
+
+    &:hover {
+      color: $colorPrimaryFontButton;
+      background: darken($colorPrimaryBgButton, 10%);
+    }
+  }
+
+  &.button--success {
+    color: $colorSuccessFontButton;
+    background: $colorSuccessBgButton;
+
+    &:hover {
+      color: $colorSuccessFontButton;
+      background: darken($colorSuccessBgButton, 10%);
+    }
+  }
+
+  &.button--info {
+    color: $colorInfoFontButton;
+    background: $colorInfoBgButton;
+
+    &:hover {
+      color: $colorInfoFontButton;
+      background: darken($colorInfoBgButton, 10%);
+    }
+  }
+
+  &.button--danger {
+    color: $colorDangerFontButton;
+    background: $colorDangerBgButton;
+
+    &:hover {
+      color: $colorDangerFontButton;
+      background: darken($colorDangerBgButton, 10%);
+    }
+  }
+
+  &.button--warning {
+    color: $colorWarningFontButton;
+    background: $colorWarningBgButton;
+
+    &:hover {
+      color: $colorWarningFontButton;
+      background: darken($colorWarningBgButton, 10%);
+    }
+  }
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: .65;
+  pointer-events: none;
+
+  &.button--default {
+    &:hover {
+      background: $colorDefaultBgButton;
+    }
+  }
+
+  &.button--primary {
+    &:hover {
+      background: $colorPrimaryBgButton;
+    }
+  }
+
+  &.button--success {
+    &:hover {
+      background: $colorSuccessBgButton;
+    }
+  }
+
+  &.button--info {
+    &:hover {
+      background: $colorInfoBgButton;
+    }
+  }
+
+  &.button--danger {
+    &:hover {
+      background: $colorDangerBgButton;
+    }
+  }
+
+  &.button--warning {
+    &:hover {
+      background: $colorWarningBgButton;
+    }
+  }
+}
+
+label {
+  font-weight: 300;
+  color: $colorLabel;
+  cursor: pointer;
+
+  abbr[title] {
+    border-bottom: none;
+    color: $colorRequiredElementForm;
+  }
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='search'],
+input[type='number'],
+input[type='file'],
+textarea,
+select {
+  outline: none;
+  font-family: $baseFont;
+  font-weight: 300;
+  color: $colorInputFont;
+  border-color: transparent;
+  background-color: $colorBgInput;
+  background-repeat: no-repeat;
+
+  &:focus {
+    border-color: $colorBaseSecondApplication !important;
+    @include boxShadow(inset 0 0 calcRem(15px) 0 rgba(199, 178, 153, 0.3) !important);
+  }
+
+  .field_with_errors & {
+    border-color: $colorRequiredElementForm;
+  }
+}
+
+select {
+  background-image: url(../images/svg/down-icon.svg);
+  background-position: 99% center;
+  background-size: auto 40%;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-style: italic;
+  color: lighten($colorInputFont, 20%);
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  font-style: italic;
+  color: lighten($colorInputFont, 20%);
+}
+
+.field_with_errors {
+  position: relative;
+
+  span.error {
+    color: $colorRequiredElementForm;
+    background-color: $colorBgInput;
+    border-color: $colorRequiredElementForm;
+    border-top-right-radius: calcRem(5px);
+    border-top-left-radius: calcRem(5px);
+    border-bottom-left-radius: calcRem(5px);
+
+    @include boxShadow(inset 0 0 calcRem(7px) 0 rgba(255, 0, 0, 0.3));
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='search'],
+  input[type='number'],
+  input[type='file'],
+  textarea,
+  select {
+    @include boxShadow(inset 0 0 calcRem(15px) 0 rgba(255, 0, 0, 0.3));
+  }
+}
+
+.form {
+  &__group {
+    &--slug {
+      > * {
+
+      }
+
+      label {
+        &.change-slug {
+          text-transform: uppercase;
+          border-bottom-style: solid;
+          border-bottom-color: $colorLink;
+
+          &:before {
+
+          }
+        }
+      }
+
+      span {
+        font-weight: 300;
+        color: $colorFontSpanSlug;
+      }
+
+      input[type="text"] {
+        font-size: 1rem;
+        color: $colorLink;
+        background-color: transparent;
+
+        @include borderRadius(0);
+
+        &:focus {
+          @include boxShadow(none !important);
+
+        }
+      }
+    }
+  }
+}

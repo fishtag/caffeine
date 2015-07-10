@@ -1,0 +1,29 @@
+.content__or {
+  margin-top: calcRem(50px);
+  text-align: center;
+
+  .or {
+    position: relative;
+    display: inline-block;
+    font-size: calcRem(24px);
+    line-height: 1;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: block;
+      margin-top: - calcRem(1px);
+      height: calcRem(2px);
+      width: calcRem(125px);
+    }
+
+    &:before {
+      right: 135%;
+    }
+
+    &:after {
+      left: 135%;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+// Base
+$baseFont: 'Ubuntu';
+$colorBaseFirstApplication: #362f2d;
+$colorBaseSecondApplication: #c7b299;
+$colorBaseThirdApplication: #8c0000;
+$colorBaseFourthApplication: #534741;
+
+// Body
+$colorBgBody: #efefe7;
+
+// Header
+$colorFontHeader: #ffffff;
+$colorBgHeader: $colorBaseFirstApplication;
+$colorFaviconBgHeader: $colorFontHeader;
+$colorSignOutBgHeader: $colorBaseThirdApplication;
+$colorHoverSignOutBgHeader: lighten($colorSignOutBgHeader, 5%);
+
+// Sidebar
+$widthShadowSidebar: calcRem(10px);
+$colorBgSidebar: $colorBaseFourthApplication;
+$colorCountChildrenFont: #706058;
+$colorHoverCountChildFont: $colorBgSidebar;
+$colorSidebarModuleTitle: #ffffff;
+$colorSidebarModuleTitleBorder: #423934;
+
+// Links
+$colorLink: #666666;
+$colorHoverLink: $colorBaseFirstApplication;
+$colorHoverMenuPagesLink: #ffffff;
+$colorSidebarText: #ffffff;
+$colorBgMenuPagesItemActionDeleteTitle: #ff0000;
+$colorBgMenuPagesItemActionDeleteIcon: #8c0000;
+
+// Buttons
+$colorDefaultBgButton: $colorBaseSecondApplication;
+$colorPrimaryBgButton: #0785a9;
+$colorSuccessBgButton: #07aa6f;
+$colorInfoBgButton: $colorPrimaryBgButton;
+$colorDangerBgButton: #a75050;
+$colorWarningBgButton: $colorDangerBgButton;
+
+$colorDefaultFontButton: $colorBaseFirstApplication;
+$colorPrimaryFontButton: #ffffff;
+$colorSuccessFontButton: #ffffff;
+$colorInfoFontButton: #ffffff;
+$colorDangerFontButton: #ffffff;
+$colorWarningFontButton: #ffffff;
+
+// Labels
+$colorLabel: #666666;
+$colorFontSpanSlug: #cbcbcb;
+
+// Inputs
+$colorInputFont: #999999;
+$colorBgInput: #ffffff;
+$colorRequiredElementForm: lighten($colorBaseThirdApplication, 5%);
+
+// Modules
+$colorComponentsModuleTitle: #828282;
+
+$colorOrModule: $colorBaseFourthApplication;
+
+// Search
+$colorInnerShadowResultSearch: #4b403a;
+$colorDateItemResultSearch: #75645c;

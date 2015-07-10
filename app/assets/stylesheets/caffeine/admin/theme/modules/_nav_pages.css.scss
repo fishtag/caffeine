@@ -1,0 +1,60 @@
+.nav {
+  &.nav--pages {
+
+    .nav__item {
+      .title {
+
+      }
+
+      .count-children {
+
+      }
+
+      .actions {
+        .action {
+          &:hover {
+
+          }
+
+          .action__icon {
+            i {
+
+            }
+          }
+
+          .action__name {
+
+          }
+
+          &.edit {
+
+          }
+
+          &.view {
+
+          }
+
+          &.delete {
+            .action__icon {
+              i {
+
+              }
+            }
+
+            .action__name {
+
+            }
+          }
+        }
+      }
+    }
+
+    .nav__item--fill {
+      &:hover {
+        .count-children {
+
+        }
+      }
+    }
+  }
+}

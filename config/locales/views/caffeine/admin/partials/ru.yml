@@ -1,0 +1,6 @@
+ru:
+  caffeine:
+    admin:
+      partials:
+        header:
+          welcome: 'Добро пожаловать, '

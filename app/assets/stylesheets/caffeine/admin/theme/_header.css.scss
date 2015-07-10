@@ -1,0 +1,50 @@
+.header {
+  color: $colorFontHeader;
+  background-color: $colorBgHeader;
+
+  &__logo {
+    ~ .header__page-title {
+      &:before {
+        background-color: $colorFontHeader;
+      }
+    }
+  }
+
+  &__page-title {
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__tray {
+    &__profile {
+      .favicon {
+        background-color: $colorFaviconBgHeader;
+      }
+
+      .more {
+        a {
+          color: $colorBaseSecondApplication;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .sign-out {
+        background-color: $colorSignOutBgHeader;
+
+        &:hover {
+          background-color: $colorHoverSignOutBgHeader;
+        }
+
+        .replaced-svg {
+          path {
+            fill: $colorFontHeader;
+          }
+        }
+      }
+    }
+  }
+}

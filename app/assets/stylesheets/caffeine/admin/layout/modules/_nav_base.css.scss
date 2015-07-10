@@ -1,0 +1,141 @@
+.nav__list {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list--sub {
+//  display: none;
+  margin-left: calcRem(20px);
+}
+
+.nav__item {
+  display: block;
+
+  .title {
+    display: block;
+    margin-right: calcRem(42px);
+    padding: calcRem(6.5px) 0 calcRem(6.5px) calcRem(25px);
+    background-position: calcRem(6.5px) center;
+    background-size: auto 45%;
+    overflow: hidden;
+
+    i.fa {
+      position: absolute;
+      top: calcRem(6.5px);
+      left: calcRem(6.5px);
+    }
+  }
+
+  .count-children {
+    margin-left: calcRem(6px);
+  }
+
+  .more-children {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    display: block;
+    margin-top: - calcRem(14px);
+    margin-left: - calcRem(42px);
+
+    .action__icon {
+      i {
+        &:before {
+          font-size: 0.7em;
+        }
+      }
+    }
+
+    .javascript-off & {
+      display: none !important;
+    }
+  }
+
+  .actions {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 100%;
+    z-index: 1;
+    font-size: calcRem(12px);
+    white-space: nowrap;
+
+    .javascript-off & {
+      top: 100%;
+      left: 0;
+    }
+  }
+
+  .action {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .action__icon {
+    display: inline-block;
+    padding: calcRem(6px);
+    vertical-align: middle;
+
+    i {
+      display: block;
+      height: calcRem(16px);
+      width: calcRem(16px);
+      font-size: 0.8em;
+      text-align: center;
+      line-height: calcRem(16px);
+
+      &:before {
+        line-height: inherit;
+      }
+    }
+  }
+
+  .action__name {
+    display: none;
+    padding: calcRem(6px);
+    padding-right: calcRem(12px);
+    vertical-align: middle;
+  }
+}
+
+.nav__item--fill {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    .actions {
+      display: block;
+    }
+  }
+}
+
+.sidebar {
+  .nav {
+    margin-left: calcRem(-8px);
+    margin-right: calcRem(-20px);
+  }
+
+  .nav__item {
+    .action {
+      display: block;
+
+      &:hover {
+        .action__name {
+          display: inline-block;
+
+          .javascript-off & {
+            display: none;
+          }
+        }
+      }
+
+      .javascript-off & {
+        float: left;
+      }
+    }
+  }
+
+  .nav__item--fill {
+    display: block;
+  }
+}

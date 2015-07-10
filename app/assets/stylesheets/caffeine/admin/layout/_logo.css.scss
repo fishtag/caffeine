@@ -1,0 +1,37 @@
+.logo {
+  position: relative;
+
+  &.logo--small {
+    height: $heightSmallLogo;
+    width: $widthSmallLogo;
+  }
+
+  &.logo--large {
+    height: $heightLargeLogo;
+    width: $widthLargeLogo;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
+.header__logo {
+  float: left;
+
+  .logo {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.content__logo {
+  position: relative;
+  z-index: 1;
+  margin-top: calcRem(55px);
+
+  .logo {
+    margin: 0 auto;
+  }
+}

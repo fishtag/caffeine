@@ -1,0 +1,42 @@
+.module {
+  margin-bottom: calcRem(35px);
+
+  .buttons {
+    margin-top: calcRem(12px);
+  }
+}
+
+.module__title {
+  margin-bottom: calcRem(10px);
+  padding-bottom: calcRem(10px);
+
+  position: relative;
+  padding-right: calcRem(25px);
+  border-bottom-width: calcRem(1px);
+  font-size: calcRem(18px);
+
+  .icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: - calcRem(11px);
+  }
+
+  &:after {
+    @extend .fa;
+
+    margin-right: 0.3rem;
+    font-size: 2.2rem !important;
+    vertical-align: middle;
+  }
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

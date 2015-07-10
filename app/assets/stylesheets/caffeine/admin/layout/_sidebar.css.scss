@@ -1,0 +1,24 @@
+#sidebar {
+  position: fixed;
+  top: $heightHeader;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: $paddingSidebar;
+  width: $widthSidebar;
+  box-sizing: border-box;
+  font-size: $sizeSidebarFont;
+
+  .javascript-off & {
+    overflow-y: scroll;
+  }
+}
+
+.sidebar__fill {
+  position: absolute;
+  top: $paddingSidebar;
+  right: $paddingSidebar;
+  bottom: $paddingSidebar;
+  left: $paddingSidebar;
+  //  max-height: 100%;
+}

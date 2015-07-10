@@ -1,0 +1,12 @@
+.content__or {
+  .or {
+    font-weight: 300;
+    color: $colorOrModule;
+    text-transform: uppercase;
+
+    &:before, &:after {
+      background-color: $colorBaseFirstApplication;
+      opacity: 0.1;
+    }
+  }
+}

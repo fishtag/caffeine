@@ -1,0 +1,23 @@
+// Base
+$baseSizeFont: 14px;
+
+$baseLineHeight: 1.2;
+
+// Header
+$heightHeader: calcRem(75px);
+$paddingHeader: calcRem(13px) 0  calcRem(13px) calcRem(32px);
+$sizeFaviconHeader: calcRem(48px);
+
+// Logos
+$heightSmallLogo: calcRem(30px);
+$widthSmallLogo: calcRem(207px);
+$heightLargeLogo: calcRem(71px);
+$widthLargeLogo: calcRem(501px);
+
+// Sidebar
+$paddingSidebar: calcRem(20px);
+$widthSidebar: calcRem(265px);
+$sizeSidebarFont: calcRem(12px);
+
+// Content
+$paddingContent: calcRem(20px) calcRem(25px);
