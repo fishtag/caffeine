@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 # Declare your gem's dependencies in caffeine.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
@@ -14,7 +16,8 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 group :development do
-  gem 'pg'
+  gem 'pg', '0.18'
   gem 'sass-rails'
   gem 'acts_as_seo_friendly'
+  gem 'dotenv'
 end
