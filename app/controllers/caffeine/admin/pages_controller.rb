@@ -4,11 +4,9 @@ module Caffeine
       respond_to :html
       respond_to :js, only: :update
 
-      expose(:pages)
       expose(:page, attributes: :page_params, finder: :find_by_slug, model: Caffeine::Page)
 
       def index
-        self.pages = Caffeine::Page.roots_and_descendants_preordered.decorate
       end
 
       def show

@@ -5,24 +5,39 @@
   .module__content
     nav.nav.nav--pages
       ul.nav__list
-        li.nav__item
-          span.nav__item--fill
-            a.title href='#'
-              i.fa.fa-file-text-o
-              | Главная страница
-            span.actions
-              a.action.edit href='#'
-                span.action__icon
-                  i.fa.fa-pencil
-                span.action__name Редактировать
-              a.action.view href='#'
-                span.action__icon
-                  i.fa.fa-eye
-                span.action__name Выключить
-              a.action.delete href='#'
-                span.action__icon
-                  i.fa.fa-times
-                span.action__name Удалить
+        - pages.each do |page|
+          li.nav__item
+            span.nav__item--fill
+              a.title href='#'
+                i.fa.fa-file-text-o
+                = page.title
+                span.count-children
+                  = page.children.count
+              - if page.children.any?
+                span.more-children.action
+                  span.action__icon
+                    i.iconsfont.iconsfont-plus
+
+              span.actions
+                = link_to edit_admin_page_path(page), class: ' action edit'
+                  span.action__icon
+                    i.fa.fa-pencil
+                  span.action__name Редактировать
+                = link_to admin_page_path(page), class: 'action view'
+                  span.action__icon
+                    i.fa.fa-eye
+                  span.action__name Выключить
+                = link_to admin_page_path(page),method: :delete,
+                          class: ' action delete', data: { confirm: 'Are you sure?' }
+                  span.action__icon
+                    i.fa.fa-times
+                  span.action__name Удалить
+
+
+            - if page.children.count
+              ul.nav__list.nav__list--sub
+
+
         li.nav__item
           span.nav__item--fill
             a.title href='#'
@@ -237,7 +252,9 @@
                 span.action__icon
                   i.fa.fa-times
                 span.action__name Удалить
+
+
     .buttons
-      a.button.button--default href='./'
+      = link_to new_admin_page_path, class: 'button button--default'
         i.iconsfont.iconsfont-add-button
-        span Добавить новую страницу
+        span=t('.add_page')

@@ -4,3 +4,10 @@ ru:
       partials:
         header:
           welcome: 'Добро пожаловать, '
+        modules:
+          nav_pages:
+            add_page: 'Добавить новую страницу'
+      pages:
+        form:
+          placeholders:
+            title: Введите название страницы

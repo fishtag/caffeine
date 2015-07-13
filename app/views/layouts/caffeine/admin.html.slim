@@ -28,15 +28,7 @@ html
 
         section#content.content
           .content__fill
-            aside.content__logo
-              .logo.logo--large
-                = link_to '', admin_root_path
-            aside.content__search
-              = render 'caffeine/admin/partials/modules/search'
-            aside.content__or
-              = render 'caffeine/admin/partials/modules/or'
-            aside.content__components
-              = render 'caffeine/admin/partials/modules/nav_components'
+            = yield
               /= render 'caffeine/admin/partials/article'
           .splash-block
     = javascript_include_tag 'caffeine/admin'

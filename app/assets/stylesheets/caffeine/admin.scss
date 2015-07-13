@@ -1,21 +1,8 @@
-// require simple-line-icons
-
-// require caffeine/admin/layout
-// require caffeine/admin/theme
-
-// require caffeine/admin/global/jstree
-// require caffeine/admin/global/dataTables.bootstrap
-// require select2
-// require select2-bootstrap
-
-// require caffeine/admin/global/components-rounded
-// require caffeine/admin/global/plugins
-
-// require normalize-rails
+//= require normalize-rails
+//= require font-awesome
 //= require jquery.mCustomScrollbar
+
+//= require caffeine/admin/fonts/_iconsfont
 //= require caffeine/admin/layout/_layout
 //= require caffeine/admin/theme/_theme
 //= require caffeine/admin/includes/_override
-
-@import 'jquery.mCustomScrollbar'
-

@@ -1,5 +1,5 @@
 = simple_form_for [:admin, page] do |f|
-  = f.input :title
+  = f.input :title, placeholder: t('.placeholders.title')
   = f.input :slug
   = f.input :summary
   = f.input :content
@@ -15,4 +15,8 @@
       = f.simple_fields_for :seo_datum do |seo_datum_f|
         = render 'seo_datum_fields', f: seo_datum_f
   = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
+  .buttons
+    button.button.button--success.pull-right
+      i.iconsfont.iconsfont-floppy
+      span Сохранить страницу
   = f.submit
