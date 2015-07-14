@@ -37,23 +37,21 @@ class SearchModule
         @hideResult()
 
     @input.keyup =>
-      @searchTimeout = setTimeout((=>
-        @search()
-      ), 500)
+      @search()
 
   search: () ->
     searchText = @input.val()
-    console.log searchText
-#    $.ajax
-#      type: 'POST'
-#      url: '#'
-#      data: 'search': search
-#      cache: false
-#      success: (response) ->
-#        @showResult()
-#        @scroll()
-#        $('#resSearch').html response
-#        return
+    if searchText.length > 2
+      $.ajax
+        url: '/admin/pages/test_response.json'
+        data: 'search': searchText
+        cache: false
+        dataType: 'json'
+        success: (response) =>
+          if response.status == 'ok'
+            @showResult(response.results)
+        error: () ->
+          alert 'Failed'
 
   scroll: () ->
     @container.find('.search__result__fill').mCustomScrollbar(
@@ -65,8 +63,18 @@ class SearchModule
         updateOnBrowserResize: true
     )
 
-  showResult: () =>
+  showResult: (results) =>
+    htmlResults = ""
+    $.each results, ->
+      htmlResults += "<li class='item'>"
+      htmlResults += "<div class='date'>" + @date + "</div>"
+      htmlResults += "<div class='title'><a href'" + @link + "'>" + @title + "</a></div>"
+      htmlResults += "<div class='summary'>" + @summary + "</div>"
+      htmlResults += "</li>"
+
+    @container.find('.search__result__list').html htmlResults
     @searchResultBlock.slideDown 250
+    @scroll()
 
   hideResult: () =>
     @searchResultBlock.slideUp 250
