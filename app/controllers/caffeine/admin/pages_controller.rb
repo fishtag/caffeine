@@ -1,7 +1,7 @@
 module Caffeine
   module Admin
     class PagesController < Admin::ApplicationController
-      respond_to :html
+      respond_to :html, :json
       respond_to :js, only: :update
 
       expose(:page, attributes: :page_params, finder: :find_by_slug, model: Caffeine::Page)
@@ -32,6 +32,13 @@ module Caffeine
       def destroy
         page.destroy
         respond_with :admin, page
+      end
+
+      def test_response
+        respond_with do |format|
+            msg = { status: :ok, message: 'Success!' }
+            format.json  { render json: msg }
+        end
       end
 
       private

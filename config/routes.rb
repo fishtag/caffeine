@@ -10,6 +10,8 @@ module Caffeine
       namespace :admin do
         root 'dashboard#index'
 
+        get 'pages/test_response', to: 'pages#test_response'
+
         resources :pages
       end
     end
