@@ -1,0 +1,14 @@
+span.actions
+  = link_to edit_admin_page_path(page), class: 'action edit'
+    span.action__icon
+      i.fa.fa-pencil
+    span.action__name Редактировать
+  = link_to admin_page_path(page), class: 'action view'
+    span.action__icon
+      i.fa.fa-eye
+    span.action__name Выключить
+  = link_to admin_page_path(page),method: :delete,
+            class: 'action delete', data: { confirm: 'Are you sure?' }
+    span.action__icon
+      i.fa.fa-times
+    span.action__name Удалить

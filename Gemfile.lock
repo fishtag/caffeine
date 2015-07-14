@@ -73,6 +73,12 @@ GEM
     arel (6.0.0)
     babosa (1.0.2)
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-rails-engine (3.1.1.0)
       railties (>= 3.0)
     builder (3.2.2)
@@ -80,6 +86,7 @@ GEM
       activerecord (>= 3.2.0)
       with_advisory_lock (>= 3.0.0)
     cocoon (1.2.6)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -87,6 +94,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    debug_inspector (0.0.2)
     decent_exposure (2.3.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -228,6 +236,8 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_seo_friendly
+  better_errors
+  binding_of_caller
   caffeine!
   dotenv
   pg (= 0.18)

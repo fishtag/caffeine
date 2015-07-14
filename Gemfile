@@ -19,4 +19,6 @@ group :development do
   gem 'sass-rails'
   gem 'acts_as_seo_friendly'
   gem 'dotenv'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
