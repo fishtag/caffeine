@@ -11,6 +11,10 @@ ru:
         index:
           title_page: 'Цент управления'
       pages:
+        index:
+          title_page: 'Просмотр всех страниц'
+        new:
+          title_page: 'Создание новой страницы'
         edit:
           title_page: 'Редактирование страницы'
         form:
