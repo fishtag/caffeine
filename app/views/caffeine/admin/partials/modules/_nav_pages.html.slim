@@ -6,12 +6,7 @@
     nav.nav.nav--pages
       ul.nav__list
         - root_pages.each do |page|
-          li.nav__item
-            = render 'caffeine/admin/partials/modules/nav_pages/item', page: page
-            - if page.children.any?
-              ul.nav__list.nav__list--sub
-                li.nav__item
-                  = raw draw_descendants(page.children)
+          = render 'caffeine/admin/partials/modules/nav_pages/item', page: page
     .buttons
       = link_to new_admin_page_path, class: 'button button--default'
         i.iconsfont.iconsfont-add-button
