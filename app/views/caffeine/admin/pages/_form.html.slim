@@ -15,8 +15,7 @@
 
         .form__group.form__group--slug
           = f.label :slug
-          = link_to '#', class: 'domain', target: '_blank'
-            | #{request.protocol}#{request.host}/
+          = f.object.alias_link
           = f.input_field :slug
           = f.label :slug, class: 'change-slug'
             = t('.labels.slug')
@@ -52,7 +51,7 @@
       button.button.button--success.pull-right
         i.iconsfont.iconsfont-floppy
         span= t('.save_page')
-      = link_to '#', class: 'button button--warning'
+      = link_to url_for(params), data: { confirm: 'Form reload' }, class: 'button button--warning'
         i.iconsfont.iconsfont-delete-button
         span= t('.cancel')
 

@@ -1,5 +1,6 @@
 module Caffeine
   class PageDecorator < Draper::Decorator
+    include Draper::LazyHelpers
     delegate_all
     decorates_association :children, with: Caffeine::PageDecorator
 
@@ -33,7 +34,21 @@ module Caffeine
       @main_picture ||= object.pictures.first
     end
 
+    def alias_link
+      link = "#{request.protocol}#{request.host}/"
+      if current_page?(action: 'new')
+        content_tag(:span, class: 'domain') { link }
+      else
+        link = build_link(object, link)
+        link_to link, page_path(object), class: 'domain', target: '_blank'
+      end
+    end
+
     private
+
+    def build_link(page, link)
+      (page.serve_by_slug_only? || page.main) ? link : "#{link}#{page.parent.slug}/"
+    end
 
     # This method checks if parent has template for its (grand)children
     def search_inherited_template

@@ -14,6 +14,7 @@ module Caffeine
       end
 
       def new
+        self.page = page.decorate
       end
 
       def create
@@ -22,6 +23,7 @@ module Caffeine
       end
 
       def edit
+        self.page = page.decorate
       end
 
       def update
