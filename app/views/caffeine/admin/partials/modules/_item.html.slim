@@ -1,0 +1,12 @@
+span.nav__item--fill
+  a.title href='#'
+    i.fa.fa-file-text-o
+    = page.title
+    - if page.children.any?
+      span.count-children
+        = page.children.count
+  - if page.children.any?
+    span.more-children.action
+      span.action__icon
+        i.iconsfont.iconsfont-plus
+  = render partial: 'caffeine/admin/partials/modules/page_actions', object: page, as: :page
