@@ -2,6 +2,7 @@ class SearchModule
   constructor: (element) ->
     @clickHandler = if 'ontouchstart' of window then "touchstart" else "click"
     @container = $(element)
+    @searchTimeout = null
     @input = $('#search_text', @container)
     @searchResultBlock = $('.search__result', @container)
     @searchResultBlockLeftOffset = @searchResultBlock.css('margin-left')
@@ -36,8 +37,23 @@ class SearchModule
         @hideResult()
 
     @input.keyup =>
-      @showResult()
-      @scroll()
+      @searchTimeout = setTimeout((=>
+        @search()
+      ), 500)
+
+  search: () ->
+    searchText = @input.val()
+    console.log searchText
+#    $.ajax
+#      type: 'POST'
+#      url: '#'
+#      data: 'search': search
+#      cache: false
+#      success: (response) ->
+#        @showResult()
+#        @scroll()
+#        $('#resSearch').html response
+#        return
 
   scroll: () ->
     @container.find('.search__result__fill').mCustomScrollbar(
