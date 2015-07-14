@@ -2,13 +2,13 @@ span.actions
   = link_to edit_admin_page_path(page), class: 'action edit'
     span.action__icon
       i.fa.fa-pencil
-    span.action__name Редактировать
+    span.action__name= t('.edit')
   = link_to admin_page_path(page), class: 'action view'
     span.action__icon
       i.fa.fa-eye
-    span.action__name Выключить
+    span.action__name= t('.unpublished')
   = link_to admin_page_path(page),method: :delete,
-            class: 'action delete', data: { confirm: 'Are you sure?' }
+            class: 'action delete', data: { confirm: t('.delete_confirm') }
     span.action__icon
       i.fa.fa-times
-    span.action__name Удалить
+    span.action__name= t('.delete')

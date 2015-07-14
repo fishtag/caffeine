@@ -4,33 +4,28 @@
     #form__tabs.form__tabs
       ul
         li
-          = link_to 'Основное', '#form__main'
+          = link_to t('.tab_main'), '#form__main'
         li
-          = link_to 'Изображения', '#form__images'
+          = link_to t('.tab_images'), '#form__images'
         li
-          = link_to 'SEO', '#form__seo'
+          = link_to t('.tab_seo'), '#form__seo'
 
       #form__main
         = f.input :title
-
         .form__group.form__group--slug
           = f.label :slug
           = f.object.alias_link
           = f.input_field :slug
           = f.label :slug, class: 'change-slug'
             = t('.labels.slug')
-
           = f.label :serve_by_slug_only, class: 'label--custom'
             = f.check_box :serve_by_slug_only
             span.checkbox--custom
             span= t('.labels.serve_by_slug_only')
-
         = f.input :summary, as: :text, input_html: { rows: 7 }
         = f.input :content, as: :text, input_html: { rows: 27 }
         = f.input :position
-
         = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
-
         = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
 
       #form__images

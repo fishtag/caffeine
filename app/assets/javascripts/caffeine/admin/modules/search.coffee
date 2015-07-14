@@ -2,11 +2,15 @@ class SearchModule
   constructor: (element) ->
     @clickHandler = if 'ontouchstart' of window then "touchstart" else "click"
     @container = $(element)
-    @searchTimeout = null
+
     @input = $('#search_text', @container)
+
     @searchResultBlock = $('.search__result', @container)
-    @searchResultBlockLeftOffset = @searchResultBlock.css('margin-left')
+    @searchResultList = $('.search__result__list',  @container)
+
     @searchResultBlockRightOffset = @searchResultBlock.css('margin-right')
+    @searchResultBlockLeftOffset = @searchResultBlock.css('margin-left')
+
     @splash = $('.splash-block')
 
     @init()
@@ -72,11 +76,12 @@ class SearchModule
       htmlResults += "<div class='summary'>" + @summary + "</div>"
       htmlResults += "</li>"
 
-    @container.find('.search__result__list').html htmlResults
+    @searchResultList.html htmlResults
     @searchResultBlock.slideDown 250
     @scroll()
 
   hideResult: () =>
+    @searchResultList.html ''
     @searchResultBlock.slideUp 250
 
   _isObject: (object, event) ->
