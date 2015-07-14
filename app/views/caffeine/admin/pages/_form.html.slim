@@ -1,38 +1,50 @@
 = simple_form_for [:admin, page], html: { class: 'form' } do |f|
   .form__fill
-    = f.input :title
 
-    .form__group.form__group--slug
-      = f.label :slug
-      = link_to '#', class: 'domain', target: '_blank'
-        | #{request.protocol}#{request.host}/
-      = f.input_field :slug
-      = f.label :slug, class: 'change-slug'
-        = t('.labels.slug')
+    #form__tabs.form__tabs
+      ul
+        li
+          = link_to 'Основное', '#form__main'
+        li
+          = link_to 'Изображения', '#form__images'
+        li
+          = link_to 'SEO', '#form__seo'
 
-      = f.label :serve_by_slug_only, class: 'label--custom'
-        = f.check_box :serve_by_slug_only
-        span.checkbox--custom
-        span= t('.labels.serve_by_slug_only')
+      #form__main
+        = f.input :title
 
-    = f.input :summary, as: :text, input_html: { rows: 7 }
-    = f.input :content, as: :text, input_html: { rows: 27 }
-    = f.input :position
+        .form__group.form__group--slug
+          = f.label :slug
+          = link_to '#', class: 'domain', target: '_blank'
+            | #{request.protocol}#{request.host}/
+          = f.input_field :slug
+          = f.label :slug, class: 'change-slug'
+            = t('.labels.slug')
 
-    = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
+          = f.label :serve_by_slug_only, class: 'label--custom'
+            = f.check_box :serve_by_slug_only
+            span.checkbox--custom
+            span= t('.labels.serve_by_slug_only')
 
-    #pictures
-      = f.simple_fields_for :pictures do |picture_f|
-        = render 'picture_fields', f: picture_f
-      = link_to_add_association 'Add picture', f, :pictures
+        = f.input :summary, as: :text, input_html: { rows: 7 }
+        = f.input :content, as: :text, input_html: { rows: 27 }
+        = f.input :position
 
-    - if Caffeine::Page.try :seo_friendly?
-      #seo-datum
-        = f.simple_fields_for :seo_datum do |seo_datum_f|
-          = render 'seo_datum_fields', f: seo_datum_f
+        = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
 
-    = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
+        = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
 
+      #form__images
+        #pictures
+          = f.simple_fields_for :pictures do |picture_f|
+            = render 'picture_fields', f: picture_f
+          = link_to_add_association 'Add picture', f, :pictures
+
+      #form__seo
+        - if Caffeine::Page.try :seo_friendly?
+          #seo-datum
+            = f.simple_fields_for :seo_datum do |seo_datum_f|
+              = render 'seo_datum_fields', f: seo_datum_f
     .buttons
       button.button.button--success.pull-right
         i.iconsfont.iconsfont-floppy

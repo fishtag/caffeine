@@ -248,3 +248,36 @@ textarea:-moz-placeholder {
     }
   }
 }
+
+.form__tabs.ui-tabs {
+  > ul.ui-tabs-nav {
+
+    > li {
+
+      .ui-tabs-anchor {
+        font-weight: 100;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: none;
+        color: $colorInfoFontButton;
+        background-color: $colorBaseFourthApplication;
+
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+
+        &:hover {
+          background-color: $colorBaseFirstApplication;
+        }
+      }
+
+      &.ui-state-active {
+        .ui-tabs-anchor {
+          background-color: $colorBaseFirstApplication;
+        }
+      }
+    }
+  }
+}

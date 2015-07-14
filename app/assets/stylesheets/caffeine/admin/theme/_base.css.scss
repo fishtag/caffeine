@@ -12,6 +12,8 @@ body {
 a, a:visited {
   color: $colorLink;
 
+  @include transition(all 0.25s);
+
   &:hover {
     color: $colorHoverLink;
   }

@@ -21,6 +21,7 @@ require 'nav_lynx'
 require 'cocoon'
 require 'scrollbar-rails'
 require 'normalize-rails'
+require 'jquery-ui-rails'
 require 'devise'
 require 'caffeine/engine'
 
