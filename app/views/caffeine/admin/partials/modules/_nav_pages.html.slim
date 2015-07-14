@@ -7,7 +7,7 @@
       ul.nav__list
         - root_pages.each do |page|
           li.nav__item
-            = render 'caffeine/admin/partials/modules/item', page: page
+            = render 'caffeine/admin/partials/modules/nav_pages/item', page: page
             - if page.children.any?
               ul.nav__list.nav__list--sub
                 li.nav__item
