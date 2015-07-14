@@ -38,6 +38,7 @@ ru:
             serve_by_slug_only: 'Использовать короткий URL'
           save_page: 'Сохранить страницу'
           cancel: 'Отменить изменения'
+          cancel_confirm: 'Вы уверены, что желаете отменить изменения?'
           add_picture: 'Добавить изображение'
         picture_fields:
           remove_picture: 'Удалить изображение'
