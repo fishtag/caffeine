@@ -10,7 +10,8 @@
             = render 'caffeine/admin/partials/modules/item', page: page
             - if page.children.any?
               ul.nav__list.nav__list--sub
-                = draw_descendants(page.children)
+                li.nav__item
+                  = raw draw_descendants(page.children)
     .buttons
       = link_to new_admin_page_path, class: 'button button--default'
         i.iconsfont.iconsfont-add-button
