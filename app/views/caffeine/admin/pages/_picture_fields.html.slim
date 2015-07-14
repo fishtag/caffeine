@@ -1,7 +1,12 @@
 .nested-fields
-  = image_tag attachment_url(f.object, :image, :fit, 150, 150)
+  .nested-fields__image
+    = image_tag attachment_url(f.object, :image, :fit, 150, 150)
+  = f.label :image
   = f.attachment_field :image
   = f.input :caption
-  = f.input :description
+  = f.input :description, input_html: { rows: 7 }
   = f.input :position
-  = link_to_remove_association 'remove picture', f
+  .buttons.buttons--right
+    = link_to_remove_association f, class: 'button button--warning button--sm'
+      i.iconsfont.iconsfont-delete-button
+      span= t('.remove_picture')

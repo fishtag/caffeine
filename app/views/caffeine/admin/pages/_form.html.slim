@@ -38,7 +38,10 @@
         #pictures
           = f.simple_fields_for :pictures do |picture_f|
             = render 'picture_fields', f: picture_f
-          = link_to_add_association 'Add picture', f, :pictures
+          .buttons.buttons--center
+            = link_to_add_association f, :pictures, class: 'button button--info button--sm'
+              i.iconsfont.iconsfont-add-button
+              span= t('.add_picture')
 
       #form__seo
         - if Caffeine::Page.try :seo_friendly?

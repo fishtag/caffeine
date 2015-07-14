@@ -11,8 +11,16 @@ ru:
         meta_title: 'Укажите SEO заголовок страницы'
         meta_keywords: 'Основные ключевые слова SEO'
         meta_description: 'Введите описание SEO'
+      pictures:
+        caption: 'Подпишите изображение'
+        description: 'Добавьте несколько слов, описывающих изображение'
     labels:
       seo_datum:
         meta_title: 'Заголовок SEO'
         meta_keywords: 'Ключевые слова SEO'
         meta_description: 'Описание SEO'
+      pictures:
+        image: 'Загрузить изображение'
+        caption: 'Заголовок'
+        description: 'Краткое описание'
+        position: 'Порядок'

@@ -14,6 +14,16 @@ a.button {
     width: 100%;
   }
 
+  &.button--lg {
+    padding: calcRem(19px) calcRem(28px);
+    font-size: calcRem(18px);
+  }
+
+  &.button--sm {
+    padding: calcRem(5px) calcRem(14px);
+    font-size: calcRem(10px);
+  }
+
   span {
     vertical-align: middle;
     line-height: 1;
@@ -36,6 +46,7 @@ a.button {
 .buttons {
   @extend .clearfix;
 
+  margin-top: calcRem(32px);
   margin-right: -1rem;
   overflow: hidden;
 
@@ -205,5 +216,15 @@ select {
         white-space: nowrap;
       }
     }
+  }
+}
+
+.nested-fields {
+  margin-bottom: calcRem(32px);
+  padding-bottom: calcRem(32px);
+  border-bottom-width: calcRem(10px);
+
+  .nested-fields__image {
+    margin-bottom: calcRem(32px);
   }
 }
