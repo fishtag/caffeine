@@ -218,15 +218,19 @@ textarea:-moz-placeholder {
           border-bottom-style: solid;
           border-bottom-color: $colorLink;
 
-          &:before {
-
+          &:hover {
+            border-bottom-color: transparent;
           }
         }
       }
 
-      span {
+      span, a {
         font-weight: 300;
-        color: $colorFontSpanSlug;
+
+        &.domain {
+          text-decoration: none;
+          color: $colorFontSpanSlug;
+        }
       }
 
       input[type="text"] {

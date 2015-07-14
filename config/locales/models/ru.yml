@@ -2,4 +2,11 @@ ru:
   activerecord:
     attributes:
       caffeine/page:
-        title: Заголовок страницы
+        title: 'Заголовок страницы'
+        slug: 'URL:'
+        summary: 'Краткое описание страницы'
+        content: 'Подробное описание страницы'
+        position: 'Порядок'
+        parent: 'Родительская страница'
+        serve_by_slug_only: 'Использовать короткий URL'
+        tag_list: 'Теги'

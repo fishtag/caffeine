@@ -1,0 +1,18 @@
+ru:
+  simple_form:
+    placeholders:
+      page:
+        title: 'Введите название страницы'
+        slug: 'введите алиас'
+        summary: 'Введите несколько слов, кратко описывающих страницу'
+        content: 'Здесь следует указать полное содержание страницы'
+        tag_list: 'Укажите несколько тегов к странице'
+      seo_datum:
+        meta_title: 'Укажите SEO заголовок страницы'
+        meta_keywords: 'Основные ключевые слова SEO'
+        meta_description: 'Введите описание SEO'
+    labels:
+      seo_datum:
+        meta_title: 'Заголовок SEO'
+        meta_keywords: 'Ключевые слова SEO'
+        meta_description: 'Описание SEO'

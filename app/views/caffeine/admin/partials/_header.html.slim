@@ -2,16 +2,16 @@ header.header.clearfix
   .header__fill
     .header__logo
       .logo.logo--small
-        a href='./'
+        = link_to '', admin_root_path
     .header__tray
       .header__tray__profile
         span.favicon
-          img src='/assets/images/favicon.png' title='Название сайта'
+          = image_tag 'favicon.png', title: 'Название сайта'
         span.more
           = t('caffeine.admin.partials.header.welcome')
           = link_to 'Admin', '#'
         = link_to '/admin/sign_out', class: 'sign-out', title: 'Выйти из системы'
           = image_tag 'caffeine/admin/svg/logout.svg', class: 'svg'
     .header__page-title
-      span Центр управления
+      span= content_for :header_page_title
   .splash-block

@@ -84,6 +84,10 @@ select {
   border-radius: calcRem(5px);
 }
 
+input[type='checkbox'] {
+  margin-right: 0.3rem;
+}
+
 input[type='text'],
 input[type='password'],
 input[type='email'],
@@ -129,12 +133,17 @@ select {
         vertical-align: middle;
       }
 
+      input[type="text"] {
+        vertical-align: middle;
+      }
+
       label {
         margin-bottom: 0;
         margin-right: 0.3rem;
 
         &.change-slug {
           position: relative;
+          margin-right: 2rem;
           margin-left: 2rem;
           font-size: calcRem(10px);
           border-bottom-width: calcRem(1px);
@@ -153,6 +162,7 @@ select {
 
       span {
         display: inline-block;
+        vertical-align: middle;
       }
 
       input[type="text"] {
