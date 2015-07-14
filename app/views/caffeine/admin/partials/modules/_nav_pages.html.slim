@@ -7,7 +7,7 @@
       ul.nav__list
         - root_pages.each do |page|
           li.nav__item
-            = render partial: 'caffeine/admin/partials/modules/item', locals: {page: page}
+            = render 'caffeine/admin/partials/modules/item', page: page
             - if page.children.any?
               ul.nav__list.nav__list--sub
                 = draw_descendants(page.children)
