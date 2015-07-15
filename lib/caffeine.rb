@@ -24,6 +24,7 @@ require 'normalize-rails'
 require 'jquery-ui-rails'
 require 'devise'
 require 'caffeine/engine'
+require 'jbuilder'
 
 module Caffeine
 end

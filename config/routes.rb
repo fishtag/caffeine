@@ -10,7 +10,7 @@ module Caffeine
       namespace :admin do
         root 'dashboard#index'
 
-        get 'pages/test_response', to: 'pages#test_response'
+        get 'pages/search', to: 'pages#search'
 
         resources :pages
       end
@@ -21,5 +21,5 @@ module Caffeine
 
     # Define route for pages
     get '*page_id', to: 'pages#show', constraints: PageConstraint, as: :page
-  end
+    end
 end

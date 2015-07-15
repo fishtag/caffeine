@@ -47,15 +47,14 @@ class SearchModule
     searchText = @input.val()
     if searchText.length > 2
       $.ajax
-        url: '/admin/pages/test_response.json'
+        url: '/admin/pages/search'
         data: 'search': searchText
         cache: false
         dataType: 'json'
         success: (response) =>
-          if response.status == 'ok'
-            @showResult(response.results)
+          @showResult(response.pages)
         error: () ->
-          alert 'Failed'
+          console.log 'Failed'
 
   scroll: () ->
     @container.find('.search__result__fill').mCustomScrollbar(
@@ -72,7 +71,7 @@ class SearchModule
     $.each results, ->
       htmlResults += "<li class='item'>"
       htmlResults += "<div class='date'>" + @date + "</div>"
-      htmlResults += "<div class='title'><a href'" + @link + "'>" + @title + "</a></div>"
+      htmlResults += "<div class='title'><a href=" + @link + ">" + @title + "</a></div>"
       htmlResults += "<div class='summary'>" + @summary + "</div>"
       htmlResults += "</li>"
 

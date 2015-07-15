@@ -1,9 +1,11 @@
 module Caffeine
   module Admin
     class PagesController < Admin::ApplicationController
-      respond_to :html, :json
+      respond_to :html
       respond_to :js, only: :update
+      respond_to :json, only: :search
 
+      expose(:found_pages) { Caffeine::Page.where('title LIKE ?', '%' + params[:search] + '%') }
       expose(:page, attributes: :page_params, finder: :find_by_slug, model: Caffeine::Page)
 
       def index
@@ -36,29 +38,9 @@ module Caffeine
         respond_with :admin, page
       end
 
-      def test_response
+      def search
         respond_with do |format|
-            result = {
-                status: :ok,
-                  results: [
-                    { date: '01.01.2014',
-                        title: 'О компании',
-                        link: '#',
-                        summary: 'Автономная некоммерческая организация «Центр испытаний и сертификации «Промтехносерт» была создана Решением Государственной корпорации «Ростехнологии» в 2009 году. АО «Концерн Радиоэлектронные технологии» (КРЭТ) является единственным учредителем АНО "Промтехносерт".'
-                    },
-                    { date: '02.01.2014',
-                      title: 'Услуги',
-                      link: '#',
-                      summary: 'Автономная некоммерческая организация «Центр испытаний и сертификации «Промтехносерт» была создана Решением Государственной корпорации «Ростехнологии» в 2009 году. АО «Концерн Радиоэлектронные технологии» (КРЭТ) является единственным учредителем АНО "Промтехносерт".'
-                    },
-                    { date: '03.01.2014',
-                      title: 'Контактная информация',
-                      link: '#',
-                      summary: 'Автономная некоммерческая организация «Центр испытаний и сертификации «Промтехносерт» была создана Решением Государственной корпорации «Ростехнологии» в 2009 году. АО «Концерн Радиоэлектронные технологии» (КРЭТ) является единственным учредителем АНО "Промтехносерт".'
-                    }
-                  ]
-                }
-            format.json  { render json: result }
+          format.json  { found_pages  }
         end
       end
 
