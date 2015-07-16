@@ -52,7 +52,11 @@ class SearchModule
         cache: false
         dataType: 'json'
         success: (response) =>
-          @showResult(response.pages)
+          if response.pages.length > 0
+            @showResult(response.pages)
+          else
+            @hideResult()
+
         error: () ->
           console.log 'Failed'
 
