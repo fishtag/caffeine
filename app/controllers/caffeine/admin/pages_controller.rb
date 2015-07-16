@@ -5,7 +5,7 @@ module Caffeine
       respond_to :js, only: :update
       respond_to :json, only: :search
 
-      expose(:found_pages) { Caffeine::Page.where('title LIKE ?', '%' + params[:search] + '%') }
+      expose(:found_pages) { Caffeine::Page.where('title LIKE ?', '%' + params[:search].to_s.downcase + '%') }
       expose(:page, attributes: :page_params, finder: :find_by_slug, model: Caffeine::Page)
 
       def index
@@ -40,7 +40,7 @@ module Caffeine
 
       def search
         respond_with do |format|
-          format.json  { found_pages  }
+          format.json  { found_pages }
         end
       end
 
