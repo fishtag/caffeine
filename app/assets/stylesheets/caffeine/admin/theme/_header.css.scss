@@ -22,11 +22,8 @@
       }
 
       .more {
-        .admin {
-          color: $colorBaseSecondApplication;
-        }
-
         a {
+          color: $colorBaseSecondApplication;
           text-decoration: none;
 
           &:hover {

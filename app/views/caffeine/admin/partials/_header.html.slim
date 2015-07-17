@@ -9,7 +9,7 @@ header.header.clearfix
           = image_tag favicon_path, title: app_name
         span.more
           = t('caffeine.admin.partials.header.welcome')
-          span.admin= t('.admin')
+          = link_to t('.admin'), '#'
         = link_to '/admin/sign_out', class: 'sign-out', title: t('.sign_out')
           = image_tag 'caffeine/admin/svg/logout.svg', class: 'svg'
     .header__page-title

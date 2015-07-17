@@ -3,6 +3,10 @@ span.actions
     span.action__icon
       i.fa.fa-pencil
     span.action__name= t('.edit')
+  = link_to admin_page_path(page), class: 'action view'
+    span.action__icon
+      i.fa.fa-eye
+    span.action__name= t('.unpublished')
   = link_to admin_page_path(page),method: :delete,
             class: 'action delete', data: { confirm: t('.delete_confirm') }
     span.action__icon
