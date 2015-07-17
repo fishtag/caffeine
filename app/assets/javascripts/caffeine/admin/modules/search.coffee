@@ -75,7 +75,7 @@ class SearchModule
     $.each results, ->
       htmlResults += "<li class='item'>"
       htmlResults += "<div class='date'>" + @date + "</div>"
-      htmlResults += "<div class='title'><a href=" + @link + ">" + @title + "</a></div>"
+      htmlResults += "<div class='title'><a href='" + @link + "' target='_blank'>" + @title + "</a></div>"
       htmlResults += "<div class='summary'>" + @summary + "</div>"
       htmlResults += "</li>"
 
