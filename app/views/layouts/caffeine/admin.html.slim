@@ -6,7 +6,7 @@ html
     meta http-equiv="content-type" content="text/html; charset=utf-8"
     link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'
 
-    title= 'Caffeine CMS'
+    title #{content_for :header_page_title} - Caffeine CMS
 
     = csrf_meta_tags
 
@@ -30,6 +30,5 @@ html
         section#content.content
           .content__fill
             = yield
-              /= render 'caffeine/admin/partials/article'
           .splash-block
     = javascript_include_tag 'caffeine/admin'
