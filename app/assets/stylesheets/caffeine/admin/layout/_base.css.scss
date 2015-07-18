@@ -21,6 +21,10 @@ body {
   height: 100%;
 }
 
+main {
+  padding-top: $heightHeader;
+}
+
 .clearfix {
   &:before, &:after {
     content: '';
