@@ -1,8 +1,7 @@
 module Caffeine
   module ApplicationHelper
     def favicon_path
-      path = has_asset?('favicon') ? 'favicon' : 'caffeine/admin/icons/favicon'
-      image_path(path)
+      has_asset?('favicon') ? 'favicon.png' : 'caffeine/admin/icons/favicon.png'
     end
 
     def has_asset?(path)
