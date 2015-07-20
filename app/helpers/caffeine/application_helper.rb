@@ -1,12 +1,11 @@
 module Caffeine
   module ApplicationHelper
     def favicon_path
-      path = has_asset?('favicon') ? 'favicon' : 'caffeine/admin/icons/favicon'
-      path
+      has_asset?('favicon') ? 'favicon' : 'caffeine/admin/icons/favicon'
     end
 
     def has_asset?(path)
-      Rails.application.assets.find_asset(path).present?
+      !!Rails.application.assets.resolve(path)
     end
 
     def draw_descendants(children)
