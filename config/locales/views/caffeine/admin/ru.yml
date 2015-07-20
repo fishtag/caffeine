@@ -32,7 +32,9 @@ ru:
         form:
           tab_main: 'Основное'
           tab_images: 'Изображения'
+          tab_attachments: 'Файлы'
           tab_seo: 'SEO'
+          attachment_title: 'Загружен файл: '
           labels:
             slug: 'изменить в ручную'
             serve_by_slug_only: 'Использовать короткий URL'
