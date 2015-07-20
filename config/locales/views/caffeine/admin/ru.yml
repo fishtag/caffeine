@@ -38,6 +38,7 @@ ru:
           labels:
             slug: 'изменить в ручную'
             serve_by_slug_only: 'Использовать короткий URL'
+            attachment_field: 'Загрузить файл'
           save_page: 'Сохранить страницу'
           cancel: 'Отменить изменения'
           cancel_confirm: 'Вы уверены, что желаете отменить изменения?'
