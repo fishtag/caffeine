@@ -47,7 +47,7 @@ module Caffeine
     private
 
     def build_link(page, link)
-      (page.serve_by_slug_only? || page.main) ? link : "#{link}#{page.parent.slug}/"
+      (page.serve_by_slug_only? || page.parent.nil?) ? link : "#{link}#{page.parent.slug}/"
     end
 
     # This method checks if parent has template for its (grand)children
