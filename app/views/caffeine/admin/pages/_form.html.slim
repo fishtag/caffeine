@@ -23,7 +23,7 @@
             span.checkbox--custom
             span= t('.labels.serve_by_slug_only')
         = f.input :summary, as: :text, input_html: { rows: 7 }
-        = f.input :content, as: :text, input_html: { rows: 27 }
+        = f.input :content, as: :wysiwyg, placeholder: t('.placeholders.content')
         = f.input :position
         = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
         = f.input :tag_list, input_html: { value: page.tag_list.join(',') }

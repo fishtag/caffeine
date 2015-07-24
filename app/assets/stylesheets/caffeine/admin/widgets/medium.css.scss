@@ -1,0 +1,114 @@
+@import "font-awesome/variables";
+@import "caffeine/admin/plugins/font-awesome/fa_icon_mixin";
+@import "caffeine/admin/theme/variables";
+@import "caffeine/admin/theme/mixins";
+@import "caffeine/admin/includes/functions";
+
+$buttons: (
+  bold: $fa-var-bold,
+  italic: $fa-var-italic,
+  underline: $fa-var-underline,
+  anchor: $fa-var-link,
+  quote: $fa-var-quote-left,
+  unorderedlist: $fa-var-list-ul,
+  orderedlist: $fa-var-list-ol,
+  justifyLeft: $fa-var-align-left,
+  justifyCenter: $fa-var-align-center,
+  justifyRight: $fa-var-align-right
+);
+
+.medium-editor-input {
+  display: block;
+  margin-bottom: calcRem(32px);
+  padding: calcRem(12px) calcRem(19px);
+  width: 100%;
+  max-width: 100%;
+  border-width: calcRem(1px);
+  border-style: solid;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: calcRem(5px);
+
+  outline: none;
+  border-color: transparent;
+  background-color: $colorBgInput;
+  background-repeat: no-repeat;
+
+  &:focus {
+    border-color: $colorBaseSecondApplication !important;
+    @include boxShadow(inset 0 0 calcRem(15px) 0 rgba(199, 178, 153, 0.3) !important);
+  }
+
+  &:after {
+    left: 1.35714rem;
+    top: 0.85714rem;
+    color: $colorInputFont;
+    font-family: $baseFont;
+    font-weight: 300;
+  }
+}
+
+.medium-editor-toolbar {
+  ul.medium-editor-toolbar-actions {
+    padding: 0.25em;
+    background-color: $colorBaseFirstApplication;
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      float: none;
+
+      button {
+        border: none;
+        background-color: $colorBaseFourthApplication;
+        color: #ffffff;
+
+        &:hover {
+          background-color: $colorBaseSecondApplication;
+        }
+
+        @each $suffix, $fa-var in $buttons {
+          &.medium-editor-action-#{$suffix} {
+            b {
+              display: none;
+            }
+
+            &:before {
+              @include faIcon($fa-var);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.medium-editor-toolbar-form {
+  padding: 0.25em;
+  background-color: $colorBaseSecondApplication;
+  white-space: nowrap;
+
+  a {
+    font-size: 1em;
+  }
+}
+
+.medium-editor-anchor-preview {
+  padding: 0.25em;
+  background-color: $colorBaseSecondApplication;
+
+  i {
+    color: #ffffff;
+  }
+}
+
+$size: 10px;
+
+.medium-toolbar-arrow-under:after {
+  border-width: $size $size 0 $size;
+  border-color: $colorBaseFirstApplication transparent transparent transparent;
+}
+.medium-toolbar-arrow-over:before {
+  border-width: 0 $size $size $size $size;
+  border-color: transparent transparent $colorBaseFirstApplication transparent;
+}

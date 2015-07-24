@@ -2,8 +2,10 @@
 //= require jquery_ujs
 //= require cocoon
 
+//= require caffeine/admin/vendor/medium-editor
 //= require jquery.mCustomScrollbar
 //= require jquery-ui/tabs
+//= require caffeine/admin/medium
 //= require caffeine/admin/svg
 //= require caffeine/admin/shared
 

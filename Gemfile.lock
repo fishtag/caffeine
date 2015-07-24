@@ -11,7 +11,7 @@ PATH
       decent_exposure (~> 2.3)
       devise (~> 3.4)
       draper (~> 1.4)
-      font-awesome-rails (~> 4.3.0.0)
+      font-awesome-sass (~> 4.3.0)
       friendly_id (~> 5.0)
       jbuilder
       jquery-rails (~> 4.0.3)
@@ -114,8 +114,8 @@ GEM
       request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.5.2)
-    font-awesome-rails (4.3.0.0)
-      railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.3.5)
@@ -186,7 +186,7 @@ GEM
       mime-types
       rest-client (~> 1.8)
       sinatra (~> 1.4.5)
-    request_store (1.1.0)
+    request_store (1.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rest-client (1.8.0)
@@ -247,3 +247,6 @@ DEPENDENCIES
   dotenv
   pg (= 0.18)
   sass-rails
+
+BUNDLED WITH
+   1.10.5

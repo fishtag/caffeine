@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts-as-taggable-on', '~> 3.5'
   s.add_dependency 'select2-rails', '~> 3.5'
   s.add_dependency 'simple-line-icons-rails', '~> 0.0.1'
-  s.add_dependency 'font-awesome-rails', '~> 4.3.0.0'
+  s.add_dependency 'font-awesome-sass', '~> 4.3.0'
   s.add_dependency 'bootstrap-rails-engine', '~> 3.1.1'
   s.add_dependency 'nav_lynx', '~> 1.1.1'
   s.add_dependency 'cocoon', '~> 1.2.6'
