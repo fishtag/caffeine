@@ -123,8 +123,8 @@ fieldset {
 }
 
 legend {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: calcRem(32px);
+  font-size: calcRem(18px);
 }
 
 .field_with_errors {
