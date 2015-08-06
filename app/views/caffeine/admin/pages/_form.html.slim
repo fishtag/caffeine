@@ -11,37 +11,40 @@
           = link_to t('.tab_seo'), '#form__seo'
 
       #form__main
-        = f.input :title
-        .form__group.form__group--slug
-          = f.label :slug
-          = f.object.alias_link
-          = f.input_field :slug
-          = f.label :slug, class: 'change-slug'
-            = t('.labels.slug')
-          = f.label :serve_by_slug_only, class: 'label--custom'
-            = f.check_box :serve_by_slug_only
-            span.checkbox--custom
-            span= t('.labels.serve_by_slug_only')
-        = f.input :summary, as: :text, input_html: { rows: 7 }
-        = f.input :content, as: :wysiwyg, placeholder: t('.placeholders.content')
-        = f.input :position
-        = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
-        = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
+        fieldset
+          = f.input :title
+          .form__group.form__group--slug
+            = f.label :slug
+            = f.object.alias_link
+            = f.input_field :slug
+            = f.label :slug, class: 'change-slug'
+              = t('.labels.slug')
+            = f.label :serve_by_slug_only, class: 'label--custom'
+              = f.check_box :serve_by_slug_only
+              span.checkbox--custom
+              span= t('.labels.serve_by_slug_only')
+          = f.input :summary, as: :text, input_html: { rows: 7 }
+          = f.input :content, as: :wysiwyg, placeholder: t('.placeholders.content')
+          = f.input :position
+          = f.association :parent, collection: Caffeine::Page.where.not(id: page.id)
+          = f.input :tag_list, input_html: { value: page.tag_list.join(',') }
 
       #form__images
-        #pictures
-          = f.simple_fields_for :pictures do |picture_f|
-            = render 'picture_fields', f: picture_f
-          .buttons.buttons--center
-            = link_to_add_association f, :pictures, class: 'button button--info button--sm'
-              i.iconsfont.iconsfont-add-button
-              span= t('.add_picture')
+        fieldset
+          #pictures
+            = f.simple_fields_for :pictures do |picture_f|
+              = render 'picture_fields', f: picture_f
+            .buttons.buttons--center
+              = link_to_add_association f, :pictures, class: 'button button--info button--sm'
+                i.iconsfont.iconsfont-add-button
+                span= t('.add_picture')
 
       #form__seo
-        - if Caffeine::Page.try :seo_friendly?
-          #seo-datum
-            = f.simple_fields_for :seo_datum do |seo_datum_f|
-              = render 'seo_datum_fields', f: seo_datum_f
+        fieldset
+          - if Caffeine::Page.try :seo_friendly?
+            #seo-datum
+              = f.simple_fields_for :seo_datum do |seo_datum_f|
+                = render 'seo_datum_fields', f: seo_datum_f
     .buttons
       button.button.button--success.pull-right
         i.iconsfont.iconsfont-floppy

@@ -116,6 +116,17 @@ select {
   line-height: 1.5;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+legend {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
 .field_with_errors {
   position: relative;
 

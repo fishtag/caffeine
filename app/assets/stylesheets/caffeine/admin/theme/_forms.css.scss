@@ -166,6 +166,11 @@ select {
   background-size: auto 40%;
 }
 
+legend {
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-style: italic;
