@@ -2,7 +2,7 @@ li.nav__item
   span.nav__item--fill
     a.title href='#'
       i.fa.fa-file-text-o
-      = page.title
+      = strip_tags(page.title)
       - if page.children.any?
         span.count-children
           | (#{page.children.count})
