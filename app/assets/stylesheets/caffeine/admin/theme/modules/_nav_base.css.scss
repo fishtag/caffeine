@@ -26,10 +26,8 @@
     i {
       border-radius: 20rem;
       background-color: $colorBaseSecondApplication;
-      @include boxShadow(inset calcRem(0px) calcRem(0px) calcRem(3px) calcRem(1px) rgba(0, 0, 0, 0.5))
     }
   }
-
 }
 
 .sidebar {
