@@ -216,7 +216,7 @@ legend {
       float: left;
       display: block;
       margin-right: calcRem(30px);
-      width: calcRem(170px);
+      min-width: calcRem(115px);
 
       .ui-tabs-anchor {
         position: relative;

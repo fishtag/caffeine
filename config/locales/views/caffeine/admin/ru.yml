@@ -21,7 +21,7 @@ ru:
 
       dashboard:
         index:
-          title_page: 'Цент управления'
+          title_page: 'Центр управления'
       pages:
         index:
           title_page: 'Просмотр всех страниц'
