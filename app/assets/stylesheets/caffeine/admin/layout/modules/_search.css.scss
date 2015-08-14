@@ -57,6 +57,7 @@
     left: 0;
     height: calcRem(20px);
     border-top-width: calcRem(7px);
+    pointer-events: none;
   }
 
   &:after {
@@ -64,6 +65,7 @@
     bottom: 0;
     left: calcRem(15px);
     height: calcRem(45px);
+    pointer-events: none;
   }
 }
 
