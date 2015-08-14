@@ -5,7 +5,7 @@ module Caffeine
       respond_to :js, only: :update
       respond_to :json, only: :search
 
-      expose(:found_pages) { Caffeine::Page.where('lower(title) LIKE ?', '%' + params[:search].to_s.downcase + '%') }
+      expose(:found_pages, strategy: Caffeine::PagesSearchStrategy, model: Caffeine::Page)
       expose(:page, attributes: :page_params, finder: :find_by_slug, model: Caffeine::Page)
 
       def index
