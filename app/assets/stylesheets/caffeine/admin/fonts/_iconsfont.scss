@@ -1,17 +1,17 @@
 @font-face {
   font-family: "iconsfont";
-  src: font-url('Iconsfont.eot');
-  src: font-url('Iconsfont.eot?#iefix') format('eot'),
-       font-url('Iconsfont.woff') format('woff'),
-       font-url('Iconsfont.ttf') format('truetype'),
-       font-url('Iconsfont.svg#Iconsfont') format('svg');
+  src: url(asset_path('fonts/iconsfont.eot'));
+  src: url(asset_path('fonts/iconsfont.eot?#iefix')) format('eot'),
+        url(asset_path('fonts/iconsfont.woff')) format('woff'),
+        url(asset_path('fonts/iconsfont.ttf')) format('truetype'),
+        url(asset_path('fonts/iconsfont.svg#iconsfont')) format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 .iconsfont:before {
-  display: inline-block;
   font-family: "iconsfont";
+  display: inline-block;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
