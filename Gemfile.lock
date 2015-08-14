@@ -247,6 +247,3 @@ DEPENDENCIES
   dotenv
   pg (= 0.18)
   sass-rails
-
-BUNDLED WITH
-   1.10.5
