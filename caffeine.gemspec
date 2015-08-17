@@ -41,4 +41,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'scrollbar-rails', '~> 1.0.0'
   s.add_dependency 'jquery-ui-rails'
   s.add_dependency 'jbuilder'
+  s.add_dependency 'gaffe'
 end

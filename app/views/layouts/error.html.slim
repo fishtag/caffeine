@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Error!
+
+  body
+    h1 Error!
+
+    .content
+      = yield
+
+    - if Rails.env.development? || Rails.env.test?
+      p Original exception (only displayed in development and test environment)
+
+pre
+  code= @exception.inspect

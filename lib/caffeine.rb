@@ -25,6 +25,7 @@ require 'jquery-ui-rails'
 require 'devise'
 require 'caffeine/engine'
 require 'jbuilder'
+require 'gaffe'
 
 module Caffeine
 end
