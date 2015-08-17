@@ -1,6 +1,6 @@
 li.nav__item
   span.nav__item--fill
-    a.title href='#'
+    span[class="title#{page.children.any? ? ' more-children' : ''}"]
       i.fa.fa-file-text-o
       = strip_tags(page.title)
       - if page.children.any?

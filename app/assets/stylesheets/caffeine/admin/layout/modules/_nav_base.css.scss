@@ -4,7 +4,6 @@
 }
 
 .nav__list--sub {
-//  display: none;
   margin-left: calcRem(20px);
 }
 
@@ -19,6 +18,10 @@
     background-size: auto 45%;
     overflow: hidden;
 
+    &.more-children {
+      cursor: pointer;
+    }
+
     i.fa {
       position: absolute;
       top: calcRem(6.5px);
@@ -30,7 +33,7 @@
     margin-left: calcRem(6px);
   }
 
-  .more-children {
+  .action.more-children {
     position: absolute;
     top: 50%;
     left: 100%;
