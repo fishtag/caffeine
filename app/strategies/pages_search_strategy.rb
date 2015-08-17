@@ -1,7 +1,13 @@
 module Caffeine
   class PagesSearchStrategy < ::DecentExposure::Strategy
     def resource
-      model.where('lower(title) LIKE ?', '%' + params[:search].mb_chars.downcase.to_s + '%')
+      model.where(%( lower(title) LIKE #{query} ))
+    end
+
+    private
+
+    def query
+      "%#{params[:search].mb_chars.downcase}%"
     end
   end
 end
