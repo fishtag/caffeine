@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.error {
+  height: 100%;
+  background-color: #EEEFE7;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  .error404 {
+    background-image: url(image_path('caffeine/errors/404.jpg'));
+  }
+
+  .error500 {
+    background-image: url(image_path('caffeine/errors/500.jpg'));
+  }
+}
