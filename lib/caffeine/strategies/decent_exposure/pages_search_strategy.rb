@@ -1,3 +1,5 @@
+require 'decent_exposure'
+
 module Caffeine
   class PagesSearchStrategy < ::DecentExposure::Strategy
     def resource
