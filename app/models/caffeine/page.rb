@@ -6,6 +6,7 @@ module Caffeine
         { pictures_attributes: Caffeine::Picture.permitted_attributes }
 
     include Caffeine::Concerns::SeoFriendly
+    include ActionView::Helpers::SanitizeHelper
 
     store_accessor :data, :main, :content, :summary, :serve_by_slug_only
 
@@ -18,6 +19,7 @@ module Caffeine
 
     # triggered unless page is not itself and is not selected as the main page
     before_save :drop_other_main, on: %i(create update destroy), if: ->(page) { page.main? }
+    before_save :sanitize_title, on: %i(create update)
 
     scope :main_pages, -> { where(%[data -> 'main'= 'true']) }
 
@@ -32,6 +34,10 @@ module Caffeine
     end
 
     private
+
+    def sanitize_title
+      self.title = strip_tags self.title
+    end
 
     def drop_other_main
       self.class.main_pages.where.not(id: self.id).map do |page|
