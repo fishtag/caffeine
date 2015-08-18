@@ -1,6 +1,7 @@
 ru:
-  errors:
-    not_found:
-      title: '404 | Страница не найдена'
-    internal_server_error:
-      title: '500 | Внутренняя ошибка сервера'
+  caffeine:
+    errors:
+      not_found:
+        title: '404 | Страница не найдена'
+      internal_server_error:
+        title: '500 | Внутренняя ошибка сервера'
