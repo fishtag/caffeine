@@ -34,7 +34,7 @@ module Caffeine
       end
 
       def destroy
-        return unless page.main?
+        return if page.main?
 
         page.destroy
         respond_with :admin, page
