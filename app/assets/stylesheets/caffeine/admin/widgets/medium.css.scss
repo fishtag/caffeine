@@ -4,6 +4,7 @@
 @import "caffeine/admin/theme/mixins";
 @import "caffeine/admin/includes/functions";
 
+$padding: 0.25em;
 $buttons: (
   bold: $fa-var-bold,
   italic: $fa-var-italic,
@@ -16,6 +17,7 @@ $buttons: (
   justifyCenter: $fa-var-align-center,
   justifyRight: $fa-var-align-right
 );
+$buttons-last: 'underline', 'quote', 'h3','orderedlist';
 
 .medium-editor-input {
   display: block;
@@ -23,6 +25,7 @@ $buttons: (
   padding: calcRem(12px) calcRem(19px);
   width: 100%;
   max-width: 100%;
+  min-height: 15em;
   border-width: calcRem(1px);
   border-style: solid;
   box-sizing: border-box;
@@ -50,7 +53,7 @@ $buttons: (
 
 .medium-editor-toolbar {
   ul.medium-editor-toolbar-actions {
-    padding: 0.25em;
+    padding: $padding;
     background-color: $colorBaseFirstApplication;
     white-space: nowrap;
 
@@ -76,6 +79,12 @@ $buttons: (
             &:before {
               @include faIcon($fa-var);
             }
+          }
+        }
+
+        @each $suffix in $buttons-last {
+          &.medium-editor-action-#{$suffix} {
+            border-right: $padding solid $colorBaseFirstApplication;
           }
         }
       }
