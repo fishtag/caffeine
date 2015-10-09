@@ -5,18 +5,6 @@
 @import "caffeine/admin/includes/functions";
 
 $padding: 0.25em;
-$buttons: (
-  bold: $fa-var-bold,
-  italic: $fa-var-italic,
-  underline: $fa-var-underline,
-  anchor: $fa-var-link,
-  quote: $fa-var-quote-left,
-  unorderedlist: $fa-var-list-ul,
-  orderedlist: $fa-var-list-ol,
-  justifyLeft: $fa-var-align-left,
-  justifyCenter: $fa-var-align-center,
-  justifyRight: $fa-var-align-right
-);
 $buttons-last: 'underline', 'quote', 'h3','orderedlist';
 
 .medium-editor-input {
@@ -68,18 +56,6 @@ $buttons-last: 'underline', 'quote', 'h3','orderedlist';
 
         &:hover {
           background-color: $colorBaseSecondApplication;
-        }
-
-        @each $suffix, $fa-var in $buttons {
-          &.medium-editor-action-#{$suffix} {
-            b {
-              display: none;
-            }
-
-            &:before {
-              @include faIcon($fa-var);
-            }
-          }
         }
 
         @each $suffix in $buttons-last {

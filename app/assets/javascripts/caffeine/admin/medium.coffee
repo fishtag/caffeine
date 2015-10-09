@@ -6,8 +6,9 @@ class window.MediumWidget
     @_events()
 
   _init: () ->
-    new MediumEditor @element,
+    @editor = new MediumEditor @element,
       targetBlank: true
+      buttonLabels: 'fontawesome'
       placeholder:
         text: @placeholder
       toolbar:
@@ -35,6 +36,14 @@ class window.MediumWidget
         cleanPastedHTML: true
         cleanAttrs: ['style', 'dir']
         cleanTags: ['label', 'meta', 'script', 'p']
+
+    $(@element).mediumInsert {
+      editor: @editor
+      addons:
+        images:
+          fileUploadOptions:
+            url: '/admin/upload'
+    }
 
   _events: () ->
     $('.medium-editor-input').on 'input', ->
