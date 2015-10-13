@@ -45,4 +45,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-assets-angular'
   s.add_dependency 'rails-assets-medium-editor'
   s.add_dependency 'rails-assets-medium-editor-insert-plugin'
+  s.add_dependency 'refile-mini_magick'
 end
