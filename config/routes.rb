@@ -12,7 +12,11 @@ module Caffeine
 
         get 'pages/search', to: 'pages#search'
 
-        resources :pages
+        resources :pages do
+          member do
+            resources :pictures, only: [:create], controller: 'pages/pictures'
+          end
+        end
       end
     end
 
