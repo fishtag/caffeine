@@ -14,7 +14,7 @@ module Caffeine
 
         resources :pages do
           member do
-            resources :pictures, only: [:create], controller: 'pages/pictures'
+            resources :pictures, only: [:create, :destroy], controller: 'admin/pictures'
           end
         end
       end

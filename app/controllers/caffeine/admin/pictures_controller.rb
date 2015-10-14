@@ -1,15 +1,19 @@
 module Caffeine
-  module Pages
+  module Admin
     class PicturesController < CaffeineController
       respond_to :json, only: :create
 
       expose(:page, finder: :find_by_slug, model: Caffeine::Page)
 
       def create
-        picture = page.pictures.create(image: picture_params)
+        picture = Caffeine::Picture.create(image: picture_params)
         render json: {
+          id: picture.id,
           src: Refile.attachment_url(picture, :image)
         }
+      end
+
+      def destroy
       end
 
       private
