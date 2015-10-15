@@ -43,6 +43,9 @@ class window.MediumWidget
         images:
           fileUploadOptions:
             url: '/admin/pictures'
+            paramName: 'picture'
+          uploadCompleted: ($el, data) ->
+            $el.attr('image-id', data.result.files[0].id)
     }
 
   _events: () ->
