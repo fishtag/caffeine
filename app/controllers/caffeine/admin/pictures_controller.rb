@@ -19,7 +19,7 @@ module Caffeine
       private
 
       def picture_params
-        params.require(:picture)
+        params.require(:files)
       end
     end
   end

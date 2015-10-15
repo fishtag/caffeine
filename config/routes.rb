@@ -12,11 +12,8 @@ module Caffeine
 
         get 'pages/search', to: 'pages#search'
 
-        resources :pages do
-          member do
-            resources :pictures, only: [:create, :destroy], controller: 'admin/pictures'
-          end
-        end
+        resources :pages
+        resources :pictures, only: [:create, :destroy]
       end
     end
 

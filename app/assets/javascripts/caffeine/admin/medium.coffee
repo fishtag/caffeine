@@ -42,7 +42,7 @@ class window.MediumWidget
       addons:
         images:
           fileUploadOptions:
-            url: '/admin/upload'
+            url: '/admin/pictures'
     }
 
   _events: () ->
