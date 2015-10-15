@@ -37,7 +37,7 @@ class window.MediumWidget
         cleanAttrs: ['style', 'dir']
         cleanTags: ['label', 'meta', 'script', 'p']
 
-    $(@element).mediumInsert {
+    $(@element).mediumInsert
       editor: @editor
       addons:
         images:
@@ -46,7 +46,6 @@ class window.MediumWidget
             paramName: 'picture'
           uploadCompleted: ($el, data) ->
             $el.attr('image-id', data.result.files[0].id)
-    }
 
   _events: () ->
     $('.medium-editor-input').on 'input', ->

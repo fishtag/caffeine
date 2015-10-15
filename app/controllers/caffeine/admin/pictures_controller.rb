@@ -1,7 +1,6 @@
 module Caffeine
   module Admin
     class PicturesController < CaffeineController
-      # expose(:page, finder: :find_by_slug, model: Caffeine::Page)
 
       def create
         picture = Caffeine::Picture.create(image: picture_params)
