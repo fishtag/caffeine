@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'babosa', '~> 1.0'
   s.add_dependency 'draper', '~> 1.4'
   s.add_dependency 'refile', '> 0.5', '<= 1.0'
+  s.add_dependency 'refile-mini_magick'
   s.add_dependency 'mini_magick', '~> 4.1'
   s.add_dependency 'simple_form', '~> 3.1'
   s.add_dependency 'acts-as-taggable-on', '~> 3.5'
@@ -42,4 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-ui-rails'
   s.add_dependency 'jbuilder'
   s.add_dependency 'gaffe'
+  s.add_dependency 'rails-assets-angular'
+  s.add_dependency 'rails-assets-medium-editor'
+  s.add_dependency 'rails-assets-medium-editor-insert-plugin'
 end

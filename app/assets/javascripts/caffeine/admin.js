@@ -2,9 +2,15 @@
 //= require jquery_ujs
 //= require cocoon
 
-//= require caffeine/admin/vendor/medium-editor
 //= require jquery.mCustomScrollbar
 //= require jquery-ui/tabs
+//= require blueimp-file-upload/vendor/jquery.ui.widget
+//= require blueimp-file-upload/jquery.iframe-transport
+//= require blueimp-file-upload/jquery.fileupload
+//= require handlebars/handlebars.runtime
+//= require jquery-sortable
+//= require medium-editor
+//= require medium-editor-insert-plugin/medium-editor-insert-plugin
 //= require caffeine/admin/medium
 //= require caffeine/admin/svg
 //= require caffeine/admin/shared

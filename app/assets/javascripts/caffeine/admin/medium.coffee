@@ -6,8 +6,9 @@ class window.MediumWidget
     @_events()
 
   _init: () ->
-    new MediumEditor @element,
+    @editor = new MediumEditor @element,
       targetBlank: true
+      buttonLabels: 'fontawesome'
       placeholder:
         text: @placeholder
       toolbar:
@@ -17,8 +18,9 @@ class window.MediumWidget
           'underline'
           'anchor'
           'quote'
-          'header1'
-          'header2'
+          'h1'
+          'h2'
+          'h3'
           'unorderedlist'
           'orderedlist'
           'justifyLeft'
@@ -34,6 +36,16 @@ class window.MediumWidget
         cleanPastedHTML: true
         cleanAttrs: ['style', 'dir']
         cleanTags: ['label', 'meta', 'script', 'p']
+
+    $(@element).mediumInsert
+      editor: @editor
+      addons:
+        images:
+          fileUploadOptions:
+            url: '/admin/pictures'
+            paramName: 'picture'
+          uploadCompleted: ($el, data) ->
+            $el.attr('image-id', data.result.files[0].id)
 
   _events: () ->
     $('.medium-editor-input').on 'input', ->

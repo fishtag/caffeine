@@ -13,6 +13,7 @@ module Caffeine
         get 'pages/search', to: 'pages#search'
 
         resources :pages
+        resources :pictures, only: [:create, :destroy]
       end
     end
 
