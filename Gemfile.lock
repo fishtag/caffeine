@@ -273,7 +273,10 @@ DEPENDENCIES
   caffeine!
   dotenv
   pg (= 0.18)
-  rails-assets-angular
-  rails-assets-medium-editor
-  rails-assets-medium-editor-insert-plugin
+  rails-assets-angular!
+  rails-assets-medium-editor!
+  rails-assets-medium-editor-insert-plugin!
   sass-rails
+
+BUNDLED WITH
+   1.10.6
