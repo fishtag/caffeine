@@ -1,8 +1,5 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
 # Maintain your gem's version:
 require 'caffeine/version'
 
@@ -46,4 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-ui-rails'
   s.add_dependency 'jbuilder'
   s.add_dependency 'gaffe'
+  s.add_dependency 'rails-assets-angular'
+  s.add_dependency 'rails-assets-medium-editor'
+  s.add_dependency 'rails-assets-medium-editor-insert-plugin'
 end
