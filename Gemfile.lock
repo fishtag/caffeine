@@ -21,6 +21,9 @@ PATH
       nav_lynx (~> 1.1.1)
       normalize-rails
       rails (~> 4.2)
+      rails-assets-angular
+      rails-assets-medium-editor
+      rails-assets-medium-editor-insert-plugin
       refile (> 0.5, <= 1.0)
       refile-mini_magick
       responders (~> 2.0)
@@ -273,9 +276,6 @@ DEPENDENCIES
   caffeine!
   dotenv
   pg (= 0.18)
-  rails-assets-angular!
-  rails-assets-medium-editor!
-  rails-assets-medium-editor-insert-plugin!
   sass-rails
 
 BUNDLED WITH
