@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Declare your gem's dependencies in caffeine.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -12,15 +12,12 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-angular'
-  gem 'rails-assets-medium-editor'
-  gem 'rails-assets-medium-editor-insert-plugin'
-end
-
-
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+gem 'rails-assets-angular'
+gem 'rails-assets-medium-editor'
+gem 'rails-assets-medium-editor-insert-plugin'
 
 group :development do
   gem 'pg', '0.18'

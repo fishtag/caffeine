@@ -43,4 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-ui-rails'
   s.add_dependency 'jbuilder'
   s.add_dependency 'gaffe'
+  s.add_dependency 'rails-assets-angular'
+  s.add_dependency 'rails-assets-medium-editor'
+  s.add_dependency 'rails-assets-medium-editor-insert-plugin'
 end
