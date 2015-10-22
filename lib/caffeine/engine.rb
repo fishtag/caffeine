@@ -3,9 +3,6 @@ require 'caffeine/strategies/decent_exposure/tag_strategy'
 require 'caffeine/strategies/decent_exposure/pages_search_strategy'
 require 'caffeine/concerns/sluggable'
 require 'caffeine/concerns/seo_friendly'
-require 'rails-assets-angular'
-require 'rails-assets-medium-editor'
-require 'rails-assets-medium-editor-insert-plugin'
 
 module Caffeine
   class Engine < ::Rails::Engine

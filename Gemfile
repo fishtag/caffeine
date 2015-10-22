@@ -1,11 +1,5 @@
 source 'https://rubygems.org'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-angular'
-  gem 'rails-assets-medium-editor'
-  gem 'rails-assets-medium-editor-insert-plugin'
-end
-
 # Declare your gem's dependencies in caffeine.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
