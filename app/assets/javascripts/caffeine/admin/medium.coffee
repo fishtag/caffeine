@@ -26,6 +26,7 @@ class window.MediumWidget
           'justifyLeft'
           'justifyCenter'
           'justifyRight'
+          'table'
         ]
       anchor:
         placeholderText: 'Укажите ссылку'
@@ -36,6 +37,10 @@ class window.MediumWidget
         cleanPastedHTML: true
         cleanAttrs: ['style', 'dir']
         cleanTags: ['label', 'meta', 'script', 'p']
+      extensions:
+        table: new MediumEditorTable
+          rows: 15
+          columns: 15
 
     $(@element).mediumInsert
       editor: @editor

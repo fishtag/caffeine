@@ -5,6 +5,7 @@
 //= require jquery.mCustomScrollbar
 //= require jquery-ui/tabs
 //= require medium-editor-insert-plugin
+//= require medium-editor-tables
 //= require caffeine/admin/medium
 //= require caffeine/admin/svg
 //= require caffeine/admin/shared
